@@ -7,7 +7,7 @@
         </div>
         <div class="owl-carousel testimonials-carousel">
             <div class="testimonial-item">
-                <img src="img/testimonial-1.jpg" alt="Image">
+                <img src="{{ asset('assets') }}/img/testimonial-1.jpg" alt="Image">
                 <div class="testimonial-text">
                     <h3>Client Name</h3>
                     <h4>Profession</h4>
@@ -17,7 +17,7 @@
                 </div>
             </div>
             <div class="testimonial-item">
-                <img src="img/testimonial-2.jpg" alt="Image">
+                <img src="{{ asset('assets') }}/img/testimonial-2.jpg" alt="Image">
                 <div class="testimonial-text">
                     <h3>Client Name</h3>
                     <h4>Profession</h4>
@@ -27,7 +27,7 @@
                 </div>
             </div>
             <div class="testimonial-item">
-                <img src="img/testimonial-3.jpg" alt="Image">
+                <img src="{{ asset('assets') }}/img/testimonial-3.jpg" alt="Image">
                 <div class="testimonial-text">
                     <h3>Client Name</h3>
                     <h4>Profession</h4>
@@ -37,7 +37,7 @@
                 </div>
             </div>
             <div class="testimonial-item">
-                <img src="img/testimonial-4.jpg" alt="Image">
+                <img src="{{ asset('assets') }}/img/testimonial-4.jpg" alt="Image">
                 <div class="testimonial-text">
                     <h3>Client Name</h3>
                     <h4>Profession</h4>

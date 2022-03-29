@@ -27,9 +27,27 @@
 <body>
 @include("home.header")
 @include("home.topbar")
+@include("home.navbar")
 @include("home.carousel")
-
+@include("home.inPageAboutUs")
+@include("home.service")
+@include("home.facts")
+@include("home.prices")
+@include("home.location")
+@include("home.team")
+@include("home.testimonial")
+@include("home.blog")
 @include("home.footer")
+<!--
+@yield('x')
+@yield('y')
+
+@section('a')
+    asdasd <br>
+    12344123aasdad <br>
+
+@show
+    -->
 
 </body>
 </html>

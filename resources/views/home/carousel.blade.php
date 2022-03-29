@@ -4,7 +4,7 @@
         <div class="owl-carousel">
             <div class="carousel-item">
                 <div class="carousel-img">
-                    <img src="img/carousel-1.jpg" alt="Image">
+                    <img src="{{ asset('assets') }}/img/carousel-1.jpg" alt="Image">
                 </div>
                 <div class="carousel-text">
                     <h3>Washing & Detailing</h3>
@@ -17,7 +17,7 @@
             </div>
             <div class="carousel-item">
                 <div class="carousel-img">
-                    <img src="img/carousel-2.jpg" alt="Image">
+                    <img src="{{ asset('assets') }}/img/carousel-2.jpg" alt="Image">
                 </div>
                 <div class="carousel-text">
                     <h3>Washing & Detailing</h3>
@@ -30,7 +30,7 @@
             </div>
             <div class="carousel-item">
                 <div class="carousel-img">
-                    <img src="img/carousel-3.jpg" alt="Image">
+                    <img src="{{ asset('assets') }}/img/carousel-3.jpg" alt="Image">
                 </div>
                 <div class="carousel-text">
                     <h3>Washing & Detailing</h3>

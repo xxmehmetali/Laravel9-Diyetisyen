@@ -4,7 +4,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="about-img">
-                    <img src="img/about.jpg" alt="Image">
+                    <img src="{{ asset('assets') }}/img/about.jpg" alt="Image">
                 </div>
             </div>
             <div class="col-lg-6">
