@@ -2,8 +2,8 @@
 <div class="testimonial">
     <div class="container">
         <div class="section-header text-center">
-            <p>Testimonial</p>
-            <h2>What our clients say</h2>
+            <p>Referanslarımız</p>
+            <h2>Müşterilerimiz ne diyor?</h2>
         </div>
         <div class="owl-carousel testimonials-carousel">
             <div class="testimonial-item">

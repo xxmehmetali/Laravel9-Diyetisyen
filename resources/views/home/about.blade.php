@@ -1,9 +1,9 @@
-@extends('layouts.home.service-L')
+@extends('layouts.home.about-L')
 
 @section('pageHeaderHeader')
-    Servisler
+    Hakkımızda
 @endsection
 
 @section('pageHeaderName')
-    Servisler
+    Hakkımızda
 @endsection

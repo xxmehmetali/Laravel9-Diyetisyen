@@ -6,8 +6,8 @@
                 <div class="facts-item">
                     <i class="fa fa-map-marker-alt"></i>
                     <div class="facts-text">
-                        <h3 data-toggle="counter-up">25</h3>
-                        <p>Service Points</p>
+                        <h3 data-toggle="counter-up">10</h3>
+                        <p>Şubeler</p>
                     </div>
                 </div>
             </div>
@@ -16,7 +16,7 @@
                     <i class="fa fa-user"></i>
                     <div class="facts-text">
                         <h3 data-toggle="counter-up">350</h3>
-                        <p>Engineers & Workers</p>
+                        <p>Çalışanlar</p>
                     </div>
                 </div>
             </div>
@@ -24,8 +24,8 @@
                 <div class="facts-item">
                     <i class="fa fa-users"></i>
                     <div class="facts-text">
-                        <h3 data-toggle="counter-up">1500</h3>
-                        <p>Happy Clients</p>
+                        <h3 data-toggle="counter-up">9000</h3>
+                        <p>Mutlu Müşteriler</p>
                     </div>
                 </div>
             </div>
@@ -34,7 +34,7 @@
                     <i class="fa fa-check"></i>
                     <div class="facts-text">
                         <h3 data-toggle="counter-up">5000</h3>
-                        <p>Projects Completed</p>
+                        <p>Hizmetimizle zayıflamış kişi sayısı</p>
                     </div>
                 </div>
             </div>

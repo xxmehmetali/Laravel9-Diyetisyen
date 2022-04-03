@@ -5,7 +5,7 @@
             <div class="col-lg-4 col-md-12">
                 <div class="logo">
                     <a href="index.html">
-                        <h1>Auto<span>Wash</span></h1>
+                        <h1>Süper<span>Diyet</span></h1>
                         <!-- <img src="img/logo.jpg" alt="Logo"> -->
                     </a>
                 </div>
@@ -18,8 +18,8 @@
                                 <i class="far fa-clock"></i>
                             </div>
                             <div class="top-bar-text">
-                                <h3>Opening Hour</h3>
-                                <p>Mon - Fri, 8:00 - 9:00</p>
+                                <h3>Açılış Saatleri</h3>
+                                <p>Pzt - Cuma, 8:00 - 9:00</p>
                             </div>
                         </div>
                     </div>
@@ -29,8 +29,8 @@
                                 <i class="fa fa-phone-alt"></i>
                             </div>
                             <div class="top-bar-text">
-                                <h3>Call Us</h3>
-                                <p>+012 345 6789</p>
+                                <h3>Bizi Arayın</h3>
+                                <p>+800-512-512</p>
                             </div>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                                 <i class="far fa-envelope"></i>
                             </div>
                             <div class="top-bar-text">
-                                <h3>Email Us</h3>
-                                <p>info@example.com</p>
+                                <h3>Email'le ulaşın</h3>
+                                <p>diyet@superdiyet.com</p>
                             </div>
                         </div>
                     </div>

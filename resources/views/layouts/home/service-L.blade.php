@@ -25,29 +25,15 @@
 </head>
 
 <body>
-@include("home.header")
-@include("home.topbar")
-@include("home.navbar")
-@include("home.carousel")
-@include("home.inPageAboutUs")
-@include("home.service")
-@include("home.facts")
-@include("home.prices")
-@include("home.location")
-@include("home.team")
-@include("home.testimonial")
-@include("home.blog")
-@include("home.footer")
-<!--
-@yield('x')
-@yield('y')
+@yield('name')
+@include("home.pageParts.header")
+@include("home.pageParts.topbar")
 
-@section('a')
-    asdasd <br>
-    12344123aasdad <br>
+@include("home.pageParts.pageHeader")
 
-@show
-    -->
+@include("home.pageParts.footer")
+
+
 
 </body>
 </html>

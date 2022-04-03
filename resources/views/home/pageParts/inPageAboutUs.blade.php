@@ -9,12 +9,12 @@
             </div>
             <div class="col-lg-6">
                 <div class="section-header text-left">
-                    <p>About Us</p>
-                    <h2>car washing and detailing</h2>
+                    <p>Hakkımızda</p>
+                    <h2>Başarı için anahtar</h2>
                 </div>
                 <div class="about-content">
                     <p>
-                        Lorem ipsum dolor sit amet elit. In vitae turpis. Donec in hendre dui, vel blandit massa. Ut vestibu suscipi cursus. Cras quis porta nulla, ut placerat risus. Aliquam nec magna eget velit luctus dictum
+                        200 binden fazla insan SüperDiyet kullanarak kilo verdi.Kilo verme yolculuğunuza hemen şimdi başlayın ve dünya'nın en kaliteli yiyecekleri ve besin değerleri tabanına ulaşın.
                     </p>
                     <ul>
                         <li><i class="far fa-check-circle"></i>Seats washing</li>
@@ -22,7 +22,7 @@
                         <li><i class="far fa-check-circle"></i>Interior wet cleaning</li>
                         <li><i class="far fa-check-circle"></i>Window wiping</li>
                     </ul>
-                    <a class="btn btn-custom" href="">Learn More</a>
+                    <a class="btn btn-custom" href="">Daha Fazlası</a>
                 </div>
             </div>
         </div>

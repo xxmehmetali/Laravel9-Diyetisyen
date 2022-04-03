@@ -2,15 +2,15 @@
 <div class="price">
     <div class="container">
         <div class="section-header text-center">
-            <p>Washing Plan</p>
-            <h2>Choose Your Plan</h2>
+            <p>Diyet planları</p>
+            <h2>Diyet Planınızı Seçin</h2>
         </div>
         <div class="row">
             <div class="col-md-4">
                 <div class="price-item">
                     <div class="price-header">
-                        <h3>Basic Cleaning</h3>
-                        <h2><span>$</span><strong>25</strong><span>.99</span></h2>
+                        <h3>Temel Diyet Planı</h3>
+                        <h2><span>₺</span><strong>25</strong><span>.99</span></h2>
                     </div>
                     <div class="price-body">
                         <ul>
@@ -29,8 +29,8 @@
             <div class="col-md-4">
                 <div class="price-item featured-item">
                     <div class="price-header">
-                        <h3>Premium Cleaning</h3>
-                        <h2><span>$</span><strong>35</strong><span>.99</span></h2>
+                        <h3>Premium Diyet Planı</h3>
+                        <h2><span>₺</span><strong>35</strong><span>.99</span></h2>
                     </div>
                     <div class="price-body">
                         <ul>
@@ -49,8 +49,8 @@
             <div class="col-md-4">
                 <div class="price-item">
                     <div class="price-header">
-                        <h3>Complex Cleaning</h3>
-                        <h2><span>$</span><strong>49</strong><span>.99</span></h2>
+                        <h3>Gelişmiş Diyet Planı</h3>
+                        <h2><span>₺</span><strong>49</strong><span>.99</span></h2>
                     </div>
                     <div class="price-body">
                         <ul>
