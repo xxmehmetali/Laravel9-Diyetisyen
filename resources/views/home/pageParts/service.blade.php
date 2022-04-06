@@ -8,56 +8,56 @@
         <div class="row">
             <div class="col-lg-3 col-md-6">
                 <div class="service-item">
-                    <i class="flaticon-car-wash-1"></i>
+                    <img src="{{ asset('assets') }}/img/artichoke.png" alt="" style="width: 70px ;margin-bottom: 10%">
                     <h3>Exterior Washing</h3>
                     <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="service-item">
-                    <i class="flaticon-car-wash"></i>
+                    <img src="{{ asset('assets') }}/img/bok-choy.png" alt="" style="width: 70px ;margin-bottom: 10%">
                     <h3>Interior Washing</h3>
                     <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="service-item">
-                    <i class="flaticon-vacuum-cleaner"></i>
+                    <img src="{{ asset('assets') }}/img/cauliflower.png" alt="" style="width: 70px ;margin-bottom: 10%">
                     <h3>Vacuum Cleaning</h3>
                     <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="service-item">
-                    <i class="flaticon-seat"></i>
+                    <img src="{{ asset('assets') }}/img/celery.png" alt="" style="width: 70px ;margin-bottom: 10%">
                     <h3>Seats Washing</h3>
                     <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="service-item">
-                    <i class="flaticon-car-service"></i>
+                    <img src="{{ asset('assets') }}/img/lemon.png" alt="" style="width: 70px ;margin-bottom: 10%">
                     <h3>Window Wiping</h3>
                     <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="service-item">
-                    <i class="flaticon-car-service-2"></i>
+                    <img src="{{ asset('assets') }}/img/orange.png" alt="" style="width: 70px ;margin-bottom: 10%">
                     <h3>Wet Cleaning</h3>
                     <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="service-item">
-                    <i class="flaticon-car-wash"></i>
+                    <img src="{{ asset('assets') }}/img/raspberry.png" alt="" style="width: 70px ;margin-bottom: 10%">
                     <h3>Oil Changing</h3>
                     <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6">
                 <div class="service-item">
-                    <i class="flaticon-brush-1"></i>
+                    <img src="{{ asset('assets') }}/img/strawberry.png" alt="" style="width: 70px ;margin-bottom: 10%">
                     <h3>Brake Reparing</h3>
                     <p>Lorem ipsum dolor sit amet elit. Phase nec preti facils ornare velit non metus tortor</p>
                 </div>

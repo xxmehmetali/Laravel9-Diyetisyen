@@ -7,10 +7,10 @@
                     <img src="{{ asset('assets') }}/img/carousel-1.jpg" alt="Image">
                 </div>
                 <div class="carousel-text">
-                    <h3>Washing & Detailing</h3>
-                    <h1>Keep your Car Newer</h1>
+                    <h3>Diyet & Zayıflama</h3>
+                    <h1>Yeniliğe Açık Olun</h1>
                     <p>
-                        Lorem ipsum dolor sit amet elit. Phasellus ut mollis mauris. Vivamus egestas eleifend dui ac
+                        Siz konfor alanınızdayken asla harika sonuçlar ortaya çıkmaz
                     </p>
                     <a class="btn btn-custom" href="">Explore More</a>
                 </div>
@@ -20,10 +20,10 @@
                     <img src="{{ asset('assets') }}/img/carousel-2.jpg" alt="Image">
                 </div>
                 <div class="carousel-text">
-                    <h3>Washing & Detailing</h3>
-                    <h1>Quality service for you</h1>
+                    <h3>Diyet & Zayıflama</h3>
+                    <h1>Kendinize Güvenin</h1>
                     <p>
-                        Morbi sagittis turpis id suscipit feugiat. Suspendisse eu augue urna. Morbi sagittis orci sodales
+                        Ufak detaylar, zaman içerisinde büyük farklar yaratır.
                     </p>
                     <a class="btn btn-custom" href="">Explore More</a>
                 </div>
@@ -33,10 +33,10 @@
                     <img src="{{ asset('assets') }}/img/carousel-3.jpg" alt="Image">
                 </div>
                 <div class="carousel-text">
-                    <h3>Washing & Detailing</h3>
-                    <h1>Exterior & Interior Washing</h1>
+                    <h3>Diyet & Zayıflama</h3>
+                    <h1>Hayal Edin</h1>
                     <p>
-                        Sed ultrices, est eget feugiat accumsan, dui nibh egestas tortor, ut rhoncus nibh ligula euismod quam
+                        Eğer hayal edebiliyorsanız, yapabilirsiniz
                     </p>
                     <a class="btn btn-custom" href="">Explore More</a>
                 </div>

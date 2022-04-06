@@ -12,7 +12,7 @@
                     <a href="index.html" class="nav-item nav-link active">Anasayfa</a>
                     <a href="about.html" class="nav-item nav-link">Hakkımızda</a>
                     <a href="service.html" class="nav-item nav-link">Servisler</a>
-                    <a href="price.html" class="nav-item nav-link">Ücretler</a>
+                    <a href="prices.html" class="nav-item nav-link">Ücretler</a>
                     <a href="location.html" class="nav-item nav-link">Şubelerimiz</a>
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Detaylar</a>

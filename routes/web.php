@@ -20,28 +20,60 @@ use Illuminate\Support\Facades\Route;
     Route::get('/index.html', function () {
         return view('home.index');
     });
-//  ----------  END OF HOMEPAGE   ----------
+//  ************  END OF HOMEPAGE   ************
 
 
 //  ----------  ABOUT  ----------
     Route::get('/about.html', function () {
         return view('home.about');
     });
-//  ----------  END OF ABOUT  ----------
+//  ************  END OF ABOUT  ************
 
-//  ----------  ABOUT  ----------
-/*
-Route::get('/service.html', function () {
-    return view('home.about' , ['name' => 'service']);
-});
-*/
+
+//  ----------  SERVICE  ----------
 Route::get('/service.html', function () {
     return view('home.service');
 });
-//  ----------  END OF ABOUT  ----------
+//  ************  END OF SERVICE  ************
 
 
+//  ----------  PRICES  ----------
+Route::get('/prices.html', function () {
+    return view('home.prices');
+});
+//  ************  END OF PRICES  ************
 
+
+//  ----------  LOCATION  ----------
+Route::get('/location.html', function () {
+    return view('home.location');
+});
+//  ************  END OF LOCATION  ************
+
+
+//  ----------  CONTACT  ----------
+Route::get('/contact.html', function () {
+    return view('home.contact');
+});
+//  ************  END OF CONTACT  ************
+
+//  ----------  BLOG  ----------
+Route::get('/blog.html', function () {
+    return view('home.blog');
+});
+//  ************  END OF BLOG  ************
+
+//  ----------  BOOKING ----------
+Route::get('/booking.html', function () {
+    return view('home.booking');
+});
+//  ************  END OF BOOKING ************
+
+//  ----------  TEAM ----------
+Route::get('/team.html', function () {
+    return view('home.team');
+});
+//  ************  END OF TEAM ************
 
 Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome');
 

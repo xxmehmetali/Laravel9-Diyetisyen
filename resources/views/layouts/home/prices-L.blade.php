@@ -8,9 +8,7 @@
 @include("home.pageParts.navbar")
 @include("home.pageParts.pageHeader")
 
-@include("home.pageParts.inPageAboutUs")
-@include("home.pageParts.facts")
-@include("home.pageParts.team")
+@include("home.pageParts.prices")
 
 @include("home.pageParts.footer")
 

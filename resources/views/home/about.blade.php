@@ -1,9 +1,5 @@
 @extends('layouts.home.about-L')
 
-@section('pageHeaderHeader')
-    Hakkımızda
-@endsection
+@section('pageHeaderHeader','Hakkında')
+@section('pageHeaderName','Hakkında')
 
-@section('pageHeaderName')
-    Hakkımızda
-@endsection

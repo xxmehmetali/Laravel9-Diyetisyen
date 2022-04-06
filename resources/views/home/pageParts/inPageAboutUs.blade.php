@@ -17,10 +17,10 @@
                         200 binden fazla insan SüperDiyet kullanarak kilo verdi.Kilo verme yolculuğunuza hemen şimdi başlayın ve dünya'nın en kaliteli yiyecekleri ve besin değerleri tabanına ulaşın.
                     </p>
                     <ul>
-                        <li><i class="far fa-check-circle"></i>Seats washing</li>
-                        <li><i class="far fa-check-circle"></i>Vacuum cleaning</li>
-                        <li><i class="far fa-check-circle"></i>Interior wet cleaning</li>
-                        <li><i class="far fa-check-circle"></i>Window wiping</li>
+                        <li><i class="far fa-check-circle"></i>Kalori Bazlı Takip</li>
+                        <li><i class="far fa-check-circle"></i>Paket Sonrası Ücretsiz Diyetisyen Desteği</li>
+                        <li><i class="far fa-check-circle"></i>Bölgesel Zayıflama</li>
+                        <li><i class="far fa-check-circle"></i>Motivasyon Koçluğu</li>
                     </ul>
                     <a class="btn btn-custom" href="">Daha Fazlası</a>
                 </div>

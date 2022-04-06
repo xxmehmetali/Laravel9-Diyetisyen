@@ -1,9 +1,6 @@
 @extends('layouts.home.service-L')
 
-@section('pageHeaderHeader')
-    Servisler
-@endsection
+@section('pageHeaderHeader','Servisler')
+@section('pageHeaderName','Servisler')
 
-@section('pageHeaderName')
-    Servisler
-@endsection
+
