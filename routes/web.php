@@ -75,7 +75,14 @@ Route::get('/team.html', function () {
 });
 //  ************  END OF TEAM ************
 
+
+//  ************  ADMIN STARTS HERE  ************
 Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome');
+
+//  ----------  ADMIN FAQ ----------
+Route::get('/admin/faq',[\App\Http\Controllers\Admin\FaqController::class,'index'])->name('adminfaq');
+Route::get('/admin/faq/create',[\App\Http\Controllers\Admin\FaqController::class,'create'])->name('adminFaqCreate');
+Route::post('/admin/faq/store',[\App\Http\Controllers\Admin\FaqController::class,'store'])->name('adminFaqStore');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

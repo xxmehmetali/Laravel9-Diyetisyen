@@ -1,1 +1,3 @@
-@extends('layouts.admin.index')
+@extends('layouts.admin.index-L')
+
+@section('headTitle','Index Page')
