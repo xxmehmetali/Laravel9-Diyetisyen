@@ -28,6 +28,9 @@
                 <div class="ml-auto">
                     <a class="btn btn-custom" href="#">Randevu Alın</a>
                 </div>
+                <div class="ml-auto">
+                    <a class="btn btn-custom" href="login.html">Giriş Yap / Kayıt Ol</a>
+                </div>
             </div>
         </nav>
     </div>

@@ -41,7 +41,7 @@
                                     <td>{{ $rs->created_at }}</td>
                                     <td>{{ $rs->updated_at }}</td>
                                     <td><a href="/admin/faq/edit/{{$rs->id}}">Edit</a></td>
-                                    <td><a href="/admin/faq/delete/{{$rs->id}}">Update</a></td>
+                                    <td><a href="/admin/faq/delete/{{$rs->id}}">Delete</a></td>
                                     <td><a href="/admin/faq/show/{{$rs->id}}">Show</a></td>
                                 </tr>
                             @endforeach

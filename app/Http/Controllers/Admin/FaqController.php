@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\faq;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class FaqController extends Controller
 {
@@ -44,7 +45,7 @@ class FaqController extends Controller
         $data->answer=$request->answer;
         $data->status=$request->status;
         $data->save();
-        return redirect('admin/faq');
+        return redirect('admin/faq/create');
 
     }
 
@@ -65,9 +66,13 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function edit(faq $faqs)
+    public function edit(faq $faqs, $id)
     {
-        //
+        $data=Faq::find($id);
+        return view('admin.faq.edit',[
+            'data' => $data,
+            'id' => $id
+        ]);
     }
 
     /**
@@ -77,9 +82,18 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, faq $faqs)
+    public function update(Request $request, faq $faqs, $id)
     {
-        //
+        $updatedAt = Carbon::now()->toDateTimeString();
+
+        $data=Faq::find($id);
+        $data->question=$request->question;
+        $data->answer=$request->answer;
+        $data->status=$request->status;
+        $data->updated_at=$updatedAt;
+        $data->save();
+        return redirect('/admin/faq');
+
     }
 
     /**
