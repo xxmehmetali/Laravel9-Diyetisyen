@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('smtpEmail');
             $table->string('smtpPassword');
             $table->string('smtpPort');
+            $table->unsignedBigInteger('settingId');
             $table->foreign('settingId')->references('id')->on('settings');
             $table->timestamps();
         });

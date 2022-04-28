@@ -17,8 +17,12 @@ return new class extends Migration
             $table->id();
             $table->string('comment');
             $table->string('rate');
-            $table->foreign('treatment_id')->references('id')->on('treatments');
-            $table->string(''); //user id şuanlık boş
+            $table->unsignedBigInteger('treatmentId');
+            $table->foreign('treatmentId')->references('id')->on('treatments');
+            //BURAYA SONRA BAK
+            $table->unsignedBigInteger('userId');
+            $table->foreign('userId')->references('id')->on('user');
+
             $table->string('ip',15);
             $table->string('status',6);
             $table->timestamps();

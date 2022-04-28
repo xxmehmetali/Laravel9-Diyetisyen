@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('key');
             $table->string('value');
+            $table->unsignedBigInteger('settingId');
             $table->foreign('settingId')->references('id')->on('settings');
             $table->timestamps();
         });
