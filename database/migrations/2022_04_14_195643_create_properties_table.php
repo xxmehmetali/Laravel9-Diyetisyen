@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('value');
             $table->unsignedBigInteger('settingId');
             $table->foreign('settingId')->references('id')->on('settings');
+            $table->string('status',6);
             $table->timestamps();
         });
     }

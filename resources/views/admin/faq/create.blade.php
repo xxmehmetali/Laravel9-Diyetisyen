@@ -33,7 +33,7 @@
                                     <input class="form-control" type="text" name="answer">
 
                                     <label>Status :</label> <br>
-                                    <select name="status">
+                                    <select class="form-control" name="status">
                                         <option value="Staged">Staged</option>
                                         <option value="Online">Online</option>
                                     </select>

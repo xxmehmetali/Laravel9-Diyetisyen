@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->string('settingName');
+            $table->string('status',6);
             $table->timestamps();
         });
     }

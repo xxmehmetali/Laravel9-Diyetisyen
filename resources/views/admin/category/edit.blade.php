@@ -29,7 +29,7 @@
                                 <div class="form-group col-md-6">
 
                                     <label>Parent Category :</label>
-                                    <select name="parentId" >
+                                    <select name="parentId" class="form-control">
                                         <!-- the IF statement inside Prevents INFINITE LOOP !! -->
                                         @foreach($allCategories as $rs)
                                             @if($rs->id != $data->id)
@@ -53,7 +53,7 @@
                                     <textarea class="form-control" type="textarea" name="keywords"  rows="5" placeholder="{{$data->keywords}}"></textarea>
 
                                     <label>Status :</label> <br>
-                                    <select name="status">
+                                    <select class="form-control" name="status">
                                         <option value="{{$data->status}}" selected="selected">{{$data->status}}</option>
                                         <option value="Staged">Staged</option>
                                         <option value="Online">Online</option>

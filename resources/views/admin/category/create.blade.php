@@ -28,13 +28,13 @@
                                 <div class="form-group col-md-6">
 
                                     <label>Parent Category :</label>
-                                    <select name="parentId" >
+                                    <select name="parentId" class="form-control">
                                         <option value="0" selected="selected">Main Category</option>
                                     @foreach($data as $rs)
                                         <option value="{{ $rs->id }}">{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</option>
                                     @endforeach
                                     </select>
-                                    <br><br>
+
                                     <label>Title :</label>
                                     <input class="form-control" type="text" name="title">
 
@@ -51,7 +51,7 @@
                                     <textarea class="form-control" type="textarea" name="keywords"  rows="5"></textarea>
 
                                     <label>Status :</label> <br>
-                                    <select name="status">
+                                    <select class="form-control" name="status">
                                         <option value="Staged">Staged</option>
                                         <option value="Online">Online</option>
                                     </select>

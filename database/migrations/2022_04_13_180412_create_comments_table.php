@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('rate');
             $table->unsignedBigInteger('treatmentId');
             $table->foreign('treatmentId')->references('id')->on('treatments');
-            //BURAYA SONRA BAK
+
             $table->unsignedBigInteger('userId');
-            $table->foreign('userId')->references('id')->on('user');
+            $table->foreign('userId')->references('id')->on('users');
 
             $table->string('ip',15);
             $table->string('status',6);

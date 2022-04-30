@@ -18,14 +18,27 @@ return new class extends Migration
             $table->string('title');
             $table->string('keywords');
             $table->string('description');
-            $table->string('imageId'); // image tablosundan alacak
+            $table->string('image'); // image tablosundan alacak
             $table->string('categoryId');
             $table->string('detail');
             $table->string('price');
+
+            //  Kaç haftada bir görüşülecek
+            $table->string('frequency');
+            //  Planın süresi
+            $table->string('duration');
+
+            //  Doktorun id 'si
+            $table->unsignedBigInteger('userId');
+            $table->foreign('userId')->references('id')->on('users');
+
+
             //ekstra kolonlar ekle
 
             $table->string('status');
             $table->timestamps();
+
+
         });
     }
 

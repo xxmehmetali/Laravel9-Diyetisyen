@@ -34,7 +34,7 @@
                                     <input class="form-control" type="text" name="answer" placeholder="{{$data->answer}}">
 
                                     <label>Status :</label> <br>
-                                    <select name="status">
+                                    <select class="form-control" name="status">
                                         <option selected>{{$data->status}}</option>
                                         <option value="Staged">Staged</option>
                                         <option value="Online">Online</option>
