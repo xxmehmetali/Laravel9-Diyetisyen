@@ -26,8 +26,15 @@
                         </ul>
                     </li>
                     <li>
-
-
+                        <a href="#">Categories<span class="fa arrow"></span></a>
+                        <ul class="nav nav-third-level">
+                            <li>
+                                <a href="{{ route('admin.category.index') }}">List</a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.category.create') }}">Create</a>
+                            </li>
+                        </ul>
                     </li>
                 </ul>
             </li>

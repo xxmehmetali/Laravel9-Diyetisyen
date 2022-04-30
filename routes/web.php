@@ -62,6 +62,8 @@ use Illuminate\Support\Facades\Route;
         return view('home.team');
     });
 
+    //  USER RELATED PAGES
+    //-------------------------
     //  LogIn - Register
     Route::get('/login.html', function () {
         return view('home.logIn-Register');
@@ -72,6 +74,13 @@ use Illuminate\Support\Facades\Route;
         return view('home.profile');
     });
 
+    //  Browse Dietitian
+    Route::get('/browseDietitian.html', function () {
+        return view('home.browseDietitian');
+    });
+
+
+
 //  ----------  END OF FRONTSTORE PAGES  ----------
 
 
@@ -79,30 +88,43 @@ use Illuminate\Support\Facades\Route;
 
 
 //  ************  ADMIN STARTS HERE  ************
-//  ----------  ADMIN PAGES  ----------
+Route::prefix('admin')->name('admin.')->group(function () {
+    //  ----------  ADMIN PAGES  ----------
 
-//  admin : index / list page
-Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('adminhome');
+    //  admin : index
+    Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('index');
 
-//  admin faq
-Route::get('/admin/faq',[\App\Http\Controllers\Admin\FaqController::class,'index'])->name('adminfaq');
-Route::get('/admin/faq/create',[\App\Http\Controllers\Admin\FaqController::class,'create'])->name('adminFaqCreate');
-Route::get('/admin/faq/edit/{id}',[\App\Http\Controllers\Admin\FaqController::class,'edit'])->name('adminFaqEdit');
+    //  admin faq
+    Route::prefix('/faq')->name('faq.')->controller(\App\Http\Controllers\Admin\FaqController::class)->group(function () {
+        //  PAGES
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
 
-
-
-
-//  ----------  END OF ADMIN PAGES  ----------
-
-//  ----------  ADMIN FUNCTIONS  ----------
-
-//  admin faq
-Route::post('/admin/faq/store',[\App\Http\Controllers\Admin\FaqController::class,'store'])->name('adminFaqStore');
-Route::post('/admin/faq/update/{id}',[\App\Http\Controllers\Admin\FaqController::class,'update'])->name('adminFaqUpdate');
-Route::get('/admin/faq/destroy/{id}',[\App\Http\Controllers\Admin\FaqController::class,'store'])->name('adminFaqDestroy');
+        //  FUNCTIONS
+        Route::post('/store','store')->name('store');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('destroy');
+    });
 
 
-//  ----------  END OF ADMIN FUNCTIONS  ----------
+    //  admin category
+    Route::prefix('/category')->name('category.')->controller(\App\Http\Controllers\Admin\CategoryController::class)->group(function () {
+        //  PAGES
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
+
+        //  FUNCTIONS
+        Route::post('/store','store')->name('store');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('destroy');
+    });
+
+    //  ----------  END OF ADMIN PAGES  ----------
+});
 //  ************  ADMIN ENDS HERE  ************
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {

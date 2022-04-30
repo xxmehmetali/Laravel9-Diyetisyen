@@ -1,0 +1,20 @@
+.width{
+    width: 10vw;
+}
+.panel-body .showTable{
+    font-size: 2rem;
+}
+.margin{
+    margin: 2rem 2rem 2rem 0;
+}
+td{
+    word-break: break-all;
+}
+
+.save{
+    width: 100px;
+    margin:0 10px;
+}
+.center{
+    text-align: center;
+}

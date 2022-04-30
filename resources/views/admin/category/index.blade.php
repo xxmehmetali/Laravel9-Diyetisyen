@@ -1,27 +1,27 @@
 @extends('layouts.admin.index-L')
-@section('headTitle','FAQ Main Page')
+@section('headTitle','category Main Page')
 @section('customImports')
     <script src="{{ asset('assets') }}/admin/js/dataTables/dataTables.bootstrap.js"></script>
     <script src="{{ asset('assets') }}/admin/js/dataTables/jquery.dataTables.js"></script>
     <link href="{{ asset('assets') }}/admin/js/dataTables/dataTables.bootstrap.css" rel="stylesheet" />
 
-    <script src="{{ asset('assets') }}/admin/js/pageJS/faq.js"></script>
+    <script src="{{ asset('assets') }}/admin/js/pageJS/category.js"></script>
 
     <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/common.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/faq.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/category.css">
 @endsection
 
 @section('pageInnerContent')
 
     <div class="row">
         <div class="col-md-12 margin">
-            <a href="{{ route('admin.faq.create') }}" class="btn btn-primary">Add FAQ</a>
+            <a href="{{ route('admin.category.create') }}" class="btn btn-primary">Add Category</a>
         </div>
         <div class="col-md-12">
             <!-- Advanced Tables -->
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    Faqs
+                    Advanced Tables
                 </div>
                 <div class="panel-body">
                     <div class="table-responsive">
@@ -29,9 +29,11 @@
                             <thead>
                                 <tr role="row">
                                     <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 80px">ID</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 410px;">Question</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 373px;">Answers</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 227px;">Status version</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 410px;">Title</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Platform(s): activate to sort column ascending" style="width: 373px;">Description</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 227px;">Image</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Engine version: activate to sort column ascending" style="width: 227px;">Status</th>
+                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 162px;">Tree</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 162px;">Edit</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 162px;">Delete</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 162px;">Show</th>
@@ -41,12 +43,21 @@
                             @foreach($data as $rs)
                                 <tr>
                                     <td>{{ $rs->id }}</td>
-                                    <td>{{Str::of($rs->question)->limit(25) }}</td>
-                                    <td>{{Str::of($rs->answer)->limit(25) }}</td>
+                                    <td>{{Str::of($rs->title)->limit(25) }}</td>
+                                    <td>{{ $rs->description }}</td>
+                                    <td>
+                                        @if($rs->image)
+                                            <img src="{{Storage::url($rs->image)}}" />
+                                        @else
+                                            <label>No Image</label>
+                                        @endif
+
+                                    </td>
                                     <td>{{ $rs->status }}</td>
-                                    <td class="center"><a href="{{ route('admin.faq.edit', ['id'=>$rs->id]) }}" class="btn btn-primary">Edit</a></td>
-                                    <td class="center"><a onclick="return confirm('Do you want to delete?')" href="{{ route('admin.faq.destroy', ['id'=>$rs->id]) }}" class="btn btn-danger">Delete</a></td>
-                                    <td class="center"><a href="{{ route('admin.faq.show', ['id'=>$rs->id]) }}" class="btn btn-primary">Show</a></td>
+                                    <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs, $rs->title) }}</td>
+                                    <td class="center"><a href="{{ route('admin.category.edit', ['id'=>$rs->id]) }}" class="btn btn-primary">Edit</a></td>
+                                    <td class="center"><a onclick="return confirm('Do you want to delete?')" href="{{ route('admin.category.destroy', ['id'=>$rs->id]) }}" class="btn btn-danger">Delete</a></td>
+                                    <td class="center"><a href="{{ route('admin.category.show', ['id'=>$rs->id]) }}" class="btn btn-primary">Show</a></td>
                                 </tr>
                             @endforeach
 

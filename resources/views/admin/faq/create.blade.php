@@ -1,9 +1,19 @@
 @extends('layouts.admin.index-L')
 @section('headTitle','FAQ Create')
 
+@section('customImports')
+    <script src="{{ asset('assets') }}/admin/js/pageJS/faq.js"></script>
+
+    <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/common.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/faq.css">
+@endsection
+
 @section('pageInnerContent')
 
     <div class="row">
+        <div class="col-md-12 margin">
+            <a href="{{ route('admin.faq.index') }}" class="btn btn-primary">Go to the List</a>
+        </div>
         <div class="col-md-12">
             <!-- Form Elements -->
             <div class="panel panel-default">
@@ -13,7 +23,7 @@
                 <div class="panel-body">
                     <div class="row">
                         <div class="col-md-12">
-                            <form role="form" action="/admin/faq/store" method="post">
+                            <form role="form" action="{{ route('admin.faq.store') }}" method="post">
                                 @csrf
                                 <div class="form-group">
                                     <label>Question :</label>
@@ -30,8 +40,8 @@
                                 </div>
 
                                 <div style="margin-top:30px;"></div>
-                                <button type="submit" class="btn btn-default">Submit Button</button>
-                                <button type="reset" class="btn btn-primary">Reset Button</button>
+                                <button type="reset" class="btn btn-primary">Reset Form</button>
+                                <button type="submit" class="btn btn-success save">Save</button>
                             </form>
                         </div>
                     </div>

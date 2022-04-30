@@ -55,9 +55,13 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function show(faq $faqs)
+    public function show(faq $faqs, $id)
     {
-        //
+        $data=Faq::find($id);
+        return view('admin.faq.show',[
+            'data' => $data,
+            'id' => $id
+        ]);
     }
 
     /**
@@ -102,8 +106,10 @@ class FaqController extends Controller
      * @param  \App\Models\faq  $faqs
      * @return \Illuminate\Http\Response
      */
-    public function destroy(faq $faqs)
+    public function destroy(faq $faqs, $id)
     {
-        //
+        $data=Faq::find($id);
+        $data->delete();
+        return redirect('/admin/faq');
     }
 }
