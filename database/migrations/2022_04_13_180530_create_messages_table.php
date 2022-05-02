@@ -18,7 +18,11 @@ return new class extends Migration
             $table->string('name',50);
             $table->string('email',50);
             $table->string('phone',14);
-            $table->string('subject',50);
+            $table->string('subjectTitle',50);
+
+            $table->unsignedBigInteger('messageSubjectId');
+            $table->foreign('messageSubjectId')->references('id')->on('message_subjects');
+
             $table->string('message',500);
             $table->string('ip',15);
             $table->string('status',6);

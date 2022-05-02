@@ -113,21 +113,23 @@ class CategoryController extends Controller
     public function update(Request $request, category $categories, $id)
     {
         $updatedAt = Carbon::now()->toDateTimeString();
-
         $data=category::find($id);
-        if($request->parentId == 0)
-            $data->parentId=null;
-        else
-            $data->parentId=$request->parentId;
-        $data->title=$request->title;
-        $data->keywords=$request->keywords;
-        $data->description=$request->description;
-        $data->status=$request->status;
-        if($request->file('image')){
-            $data->image = $request->file('image')->store('images');
+        if($request->parentId != $data->id) {
+            if ($request->parentId == 0)
+                $data->parentId = null;
+            else
+                $data->parentId = $request->parentId;
+            $data->title = $request->title;
+            $data->keywords = $request->keywords;
+            $data->description = $request->description;
+            $data->status = $request->status;
+            if ($request->file('image')) {
+                $data->image = $request->file('image')->store('images');
+            }
+            $data->save();
+            return redirect('/admin/category');
         }
-        $data->save();
-        return redirect('/admin/category');
+        return null;
 
     }
 

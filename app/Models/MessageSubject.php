@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Category extends Model
+class MessageSubject extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $table = 'categories';
+    protected $table = 'message_subjects';
 
-    public function getTreatments()
+    public function getMessages()
     {
-        return $this->hasMany(Treatment::class, 'categoryId','id');
+        return $this->hasMany(Message::class, 'messageSubjectId','id');
     }
 }
