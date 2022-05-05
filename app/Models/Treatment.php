@@ -16,8 +16,20 @@ class Treatment extends Model
     {
         return $this->belongsTo(Category::class, 'categoryId','id');
     }
+
     public function getUser()
     {
         return $this->belongsTo(User::class, 'userId','id');
     }
+
+    public function getComments()
+    {
+        return $this->hasMany(Comment::class, 'treatmentId','id');
+    }
+
+    public function getImages()
+    {
+        return $this->hasMany(Image::class, 'treatmentId','id');
+    }
+
 }

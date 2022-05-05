@@ -16,6 +16,37 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
 
+            $table->unsignedBigInteger('orderId');
+            $table->foreign('orderId')->references('id')->on('orders');
+
+            $table->timestamp('appointmentTime');
+            $table->timestamp('appointmentDate');
+            /*
+              Carbon::now()->toDateString()
+               # output
+                # 2021-07-02
+             */
+            $table->string('weight');
+            //  Nabız
+            $table->string('pulseRate');
+
+            //  status => false / true
+            //  false means patient DID NOT COME to the appointment
+            //  true means patient CAME to the appointment
+            $table->string('status');
+            /*
+             $table->unsignedBigInteger('treatmentId');
+            $table->foreign('treatmentId')->references('id')->on('treatments');
+
+            $table->timestamp('orderDate');
+
+
+            //$table->integer('price');
+            $table->integer('totalPrice');
+
+            //  kredi kartı/havale/banka kartı ...
+            $table->string('paymentType');
+             */
             $table->timestamps();
         });
     }

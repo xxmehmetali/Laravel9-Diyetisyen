@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\message;
+use App\Models\MessageSubject;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 
@@ -47,7 +48,8 @@ class MessageController extends Controller
         $data->name=$request->name;
         $data->email=$request->email;
         $data->phone=$request->phone;
-        $data->subject=$request->subject;
+        $data->subjectTitle=$request->subjectTitle;
+        $data->messageSubjectId=$request->messageSubjectId;
         $data->message=$request->message;
         $data->ip=$request->ip;
         $data->status=$request->status;
@@ -129,6 +131,13 @@ class MessageController extends Controller
         $data=Message::find($id);
         $data->delete();
         return redirect('/admin/message');
+    }
+
+    public function createContactPage(){
+        $messageSubjects = MessageSubject::all();
+        return view('/home/contact', [
+            'messageSubjects' => $messageSubjects
+        ]);
     }
 
 }

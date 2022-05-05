@@ -1,0 +1,42 @@
+<td class="center"><a href="{{ route('admin.faq.edit', ['id'=>$rs->id]) }}" class="btn btn-primary">Edit</a></td>
+
+şurdaki route('')
+şeklinde yapılandırman gerekiyor tüm linkleri. statik sayfaları yapabiliyor musun diye bak ama faq ile ilgili tüm admin işlemleri falan bu şekilde olacak
+
+
+sadece belli bir tabloyu migrate eder :
+ php artisan migrate --path=/database/migrations/2022_04_13_180423_create_categories_table.php
+
+
+
+ÖNEMLİ NOT - MIGRATIONS !!
+--------------------------------------------------------------
+bunları düz şekilde path belirterek migrate et
+sonra php artisan migrate i çalıştır
+    category    /  php artisan migrate --path=/database/migrations/2022_04_13_180423_create_categories_table.php
+    treatments  /    php artisan migrate --path=/database/migrations/2022_04_13_180436_create_treatments_table.php
+    messageSubjects / php artisan migrate --path=/database/migrations/2022_05_01_111100_create_message_subjects_table.php
+ comments tablosu migrate olurken hata veriyor. bu yüzden yukarıdaki şekildeki gibi ilk önce  category sonra treatments tablosunu migrate edip
+ sonra düz "php artisan migrate" komutu çalıştırılmalı.
+--------------------------------------------------------------
+
+
+
+Modelle controller oluşturma
+    php artisan make:controller admin/CategoryController --model=Category --resource
+
+en üstteki commit i silme
+    git reset HEAD^
+    git push origin +HEAD
+
+model oluşturma:
+    php artisan make:model MessageSubject --migration
+
+not: formatlı text i göstermek için td ye şu eklenir :style="white-space: pre-wrap;">
+
+22.videoya başla
+ck editorü treatment ve category için uyguladın
+yeni tablolar için uygula (detail ve description alanı içeren tablolar)
+
+
+

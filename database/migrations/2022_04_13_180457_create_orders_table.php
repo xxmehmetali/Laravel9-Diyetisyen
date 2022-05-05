@@ -16,16 +16,33 @@ return new class extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
             //  USER
-            $table->unsignedBigInteger('userId');
-            $table->foreign('userId')->references('id')->on('users');
+            $table->unsignedBigInteger('patientId');
+            $table->foreign('patientId')->references('id')->on('users');
 
             //  DIETITIAN
             $table->unsignedBigInteger('dietitianId');
             $table->foreign('dietitianId')->references('id')->on('users');
 
+            //  TREATMENT
+            $table->unsignedBigInteger('treatmentId');
+            $table->foreign('treatmentId')->references('id')->on('treatments');
+
+            $table->timestamp('orderDate');
+
+
+            //$table->integer('price');
+            $table->integer('totalPrice');
+
+            //  kredi kartı/havale/banka kartı ...
+            $table->string('paymentType');
+
             $table->string('ip_address', 45)->nullable();
-            $table->string('note');
-            $table->string('status',6);
+            $table->string('doctorNote');
+
+            //  status => false / true
+            //  false means order IS NOT APPROVED
+            //  true means order IS APPROVED
+            $table->string('status');
             $table->timestamps();
         });
     }

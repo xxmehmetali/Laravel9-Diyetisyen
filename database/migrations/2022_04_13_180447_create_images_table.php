@@ -15,10 +15,13 @@ return new class extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->id();
+
+            //  ON CASCADE UYGULANMADI BU TABLOYU DÜŞÜRÜP BİR DAHA MIGRATE ET
             $table->unsignedBigInteger('treatmentId');
-            $table->foreign('treatmentId')->references('id')->on('treatments');
+            $table->foreign('treatmentId')->references('id')->on('treatments')>onDelete('cascade');
+
             $table->string('title');
-            $table->string('image'); // BURAYA BAK
+            $table->string('image');
             $table->timestamps();
         });
     }

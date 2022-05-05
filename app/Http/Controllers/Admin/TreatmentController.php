@@ -5,13 +5,25 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\treatment;
-use http\Client\Curl\User;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
 class TreatmentController extends Controller
 {
+    protected $appends = [
+        'getParentsTree'
+    ];
+
+    public static function getParentsTree($category, $title){
+        if($category->parentId == 0)
+            return $title;
+        $parent = Category::find($category->parentId);
+        $title = $parent->title . ' > ' . $title;
+        return CategoryController::getParentsTree($parent, $title);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -33,8 +45,14 @@ class TreatmentController extends Controller
     public function create()
     {
         $allCategories = Category::all();
+        //BURDA SADECE ROLE NO SU DOKTOR OLANLAR SEÇİLECEK
+        //WHERE KOŞULU KOY
+        //USER TABLOSUNDA ROLE YOK PROFİLE A EKLE
+        //ONE TO ONE İLİŞKİ KUR
+        $doctors = User::all();
         return view('admin.treatment.create',[
-            'allCategories' => $allCategories
+            'allCategories' => $allCategories,
+            'doctors' => $doctors
         ]);
     }
 
@@ -59,7 +77,7 @@ class TreatmentController extends Controller
         $data->price=$request->price;
         $data->frequency=$request->frequency;
         $data->duration=$request->duration;
-        $data->userId= 2; //BURASI DEĞİŞECEK
+        $data->userId= $request->userId;
         $data->status=$request->status;
 
         $data->save();
@@ -138,7 +156,7 @@ class TreatmentController extends Controller
     public function destroy(treatment $treatments, $id)
     {
         $data=treatment::find($id);
-        if($data->image)
+        if($data->image && Storage::disk('public')->exists($data->image))
             Storage::delete($data->image);
         $data->delete();
         return redirect('/admin/treatment');

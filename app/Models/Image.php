@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Image extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    protected $table = 'images';
+
+    public function getUser()
+    {
+        return $this->belongsTo(Treatment::class, 'treatmentId','id');
+    }
 }

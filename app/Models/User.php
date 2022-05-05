@@ -66,4 +66,19 @@ class User extends Authenticatable
     {
         return $this->hasMany(Treatment::class, 'userId','id');
     }
+
+    public function getComments()
+    {
+        return $this->hasMany(Comment::class, 'userId','id');
+    }
+
+    public function getProfile()
+    {
+        return $this->hasOne(Profile::class, 'userId','id');
+    }
+
+    public function getOrders()
+    {
+        return $this->hasMany(Order::class, 'patientId','id');
+    }
 }

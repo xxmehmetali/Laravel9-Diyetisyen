@@ -8,4 +8,12 @@ use Illuminate\Database\Eloquent\Model;
 class Order extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    protected $table = 'orders';
+
+    public function getUser()
+    {
+        return $this->hasOne(User::class, 'patientId','id');
+    }
+
 }
