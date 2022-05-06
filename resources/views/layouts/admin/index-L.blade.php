@@ -8,6 +8,7 @@
     <link href="{{ asset('assets') }}/admin/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="{{ asset('assets') }}/admin/css/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CUSTOM STYLES-->
     <link href="{{ asset('assets') }}/admin/css/custom.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->

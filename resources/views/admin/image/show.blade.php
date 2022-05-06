@@ -1,19 +1,19 @@
 @extends('layouts.admin.index-L')
-@section('headTitle','category Create')
+@section('headTitle','image Create')
 
 @section('customImports')
     <script src="{{ asset('assets') }}/admin/js/jquery-1.10.2.js"></script>
-    <script src="{{ asset('assets') }}/admin/js/pageJS/category.js"></script>
+    <script src="{{ asset('assets') }}/admin/js/pageJS/image.js"></script>
 
     <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/common.css">
-    <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/category.css">
+    <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/image.css">
 @endsection
 
 @section('pageInnerContent')
 
     <div class="row">
         <div class="col-md-12 margin">
-            <a href="{{ route('admin.category.index') }}" class="btn btn-primary">Go to the List</a>
+            <a href="{{ route('admin.image.index') }}" class="btn btn-primary">Go to the List</a>
         </div>
         <div class="col-md-12">
             <div class="panel panel-default">
@@ -30,7 +30,7 @@
                                 </tr>
                                 <tr>
                                     <td>Parent Tree</td>
-                                    <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($data, $data->title) }}</td>
+                                    <td>{{ \App\Http\Controllers\Admin\ImageController::getParentsTree($data, $data->title) }}</td>
                                 </tr>
                                 <tr>
                                     <td>Title</td>

@@ -8,36 +8,21 @@
             </li>
 
             <li>
-                <a  href="index.html"><i class="fa fa-dashboard fa-3x"></i> Dashboard</a>
+                <a  href="{{ route('admin.faq.index') }}"><i class="fa fa-dashboard fa-3x"></i>Faq</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.message.index') }}"><i class="fa-solid fa-message fa-3x"></i>Messages</a>
+            </li>
+            <li>
+                <a href="{{ route('admin.category.index') }}"><i class="fa fa-list-alt fa-3x" aria-hidden="true"></i>Categories</a>
             </li>
 
             <li>
-                <a href="#"><i class="fa fa-sitemap fa-3x"></i> Tables<span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
-                    <li>
-                        <a href="#">Faqs<span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="/admin/faq">List</a>
-                            </li>
-                            <li>
-                                <a href="/admin/faq/create">Create</a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li>
-                        <a href="#">Categories<span class="fa arrow"></span></a>
-                        <ul class="nav nav-third-level">
-                            <li>
-                                <a href="{{ route('admin.category.index') }}">List</a>
-                            </li>
-                            <li>
-                                <a href="{{ route('admin.category.create') }}">Create</a>
-                            </li>
-                        </ul>
-                    </li>
-                </ul>
+                <a href="{{ route('admin.treatment.index') }}"><i class="fa fa-medkit fa-3x" aria-hidden="true"></i>Treatments</a>
             </li>
+
+            <!-- BURADAN DEVAM ET -->
+
 
             <li>
                 <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>

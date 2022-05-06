@@ -1,6 +1,9 @@
 .width{
     width: 10vw;
 }
+.width-20vw {
+    width: 20vw;
+}
 .panel-body .showTable{
     font-size: 2rem;
 }
@@ -17,4 +20,8 @@ td{
 }
 .center{
     text-align: center;
+}
+
+.hidden-input {
+    display: none;
 }

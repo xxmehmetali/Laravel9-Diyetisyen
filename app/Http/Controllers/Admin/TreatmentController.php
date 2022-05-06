@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\treatment;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -68,12 +69,14 @@ class TreatmentController extends Controller
 
         $data->title=$request->title;
         $data->keywords=$request->keywords;
-        $data->description=$request->description;
+        //$data->description=$request->description;
+        $data->description = $request->input('description');
         if($request->file('image')){
             $data->image = $request->file('image')->store('images');
         }
         $data->categoryId=$request->categoryId;
-        $data->detail=$request->detail;
+        //$data->detail=$request->detail;
+        $data->detail = $request->input('detail');
         $data->price=$request->price;
         $data->frequency=$request->frequency;
         $data->duration=$request->duration;
@@ -160,5 +163,14 @@ class TreatmentController extends Controller
             Storage::delete($data->image);
         $data->delete();
         return redirect('/admin/treatment');
+    }
+
+    public function treatmentDetailPage($id){
+        $treatment = \App\Models\Treatment::find($id);
+        $treatmentImages = Image::where('treatmentId', $id)->get();
+        return view('home.treatmentDetailPage', [
+            'treatment' => $treatment,
+            'treatmentImages' => $treatmentImages
+        ]);
     }
 }

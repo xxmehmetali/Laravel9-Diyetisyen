@@ -23,7 +23,7 @@ return new class extends Migration
             $table->unsignedBigInteger('categoryId');
             $table->foreign('categoryId')->references('id')->on('categories');
 
-            $table->string('detail');
+            $table->text('detail');
             $table->string('price');
 
             //  Kaç haftada bir görüşülecek

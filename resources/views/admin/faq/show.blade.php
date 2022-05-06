@@ -2,6 +2,7 @@
 @section('headTitle','FAQ Create')
 
 @section('customImports')
+    <script src="{{ asset('assets') }}/admin/js/jquery-1.10.2.js"></script>
     <script src="{{ asset('assets') }}/admin/js/pageJS/faq.js"></script>
 
     <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/common.css">

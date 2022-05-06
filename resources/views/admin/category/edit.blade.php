@@ -3,6 +3,7 @@
 
 @section('customImports')
     <script src="{{ asset('assets') }}/admin/js/pageJS/category.js"></script>
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 
     <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/common.css">
     <link rel="stylesheet" href="{{ asset('assets') }}/admin/css/category.css">
@@ -37,20 +38,19 @@
                                             @endif
                                         @endforeach
                                     </select>
-                                    <br><br>
+
                                     <label>Title :</label>
                                     <input class="form-control" type="text" name="title" placeholder="{{$data->title}}">
 
                                     <label>Description :</label>
-                                    <input class="form-control" type="text" name="description" placeholder="{{$data->description}}">
-
-                                    <label>Image :</label>
-                                    <input class="form-control" type="file" name="image">
+                                    <input id="editor" class="form-control" type="text" name="description">
 
                                 </div>
                                 <div class="form-group col-md-6">
+                                    <label>Image :</label>
+                                    <input class="form-control" type="file" name="image">
                                     <label>Keywords [ Please seperate each keyword with comma ( , ) ]:</label>
-                                    <textarea class="form-control" type="textarea" name="keywords"  rows="5" placeholder="{{$data->keywords}}"></textarea>
+                                    <input class="form-control" type="text" name="keywords">
 
                                     <label>Status :</label> <br>
                                     <select class="form-control" name="status">
@@ -71,4 +71,14 @@
         </div>
     </div>
 
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .then( editor => {
+                console.log( editor );
+            } )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
 @endsection
