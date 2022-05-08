@@ -15,12 +15,8 @@ use Illuminate\Support\Facades\Route;
 
 //  ----------  FRONTSTORE PAGES  ----------
     //  Homepage
-    Route::get('/', function () {
-        return view('home.index');
-    });
-    Route::get('/index.html', function () {
-        return view('home.index');
-    });
+    Route::get('/', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
+    Route::get('/index.html', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
     //  About
     Route::get('/about.html', function () {
@@ -77,6 +73,13 @@ use Illuminate\Support\Facades\Route;
     Route::get('/browseDietitian.html', function () {
         return view('home.browseDietitian');
     });
+
+    //  Treatment Detail Page
+    Route::get('/treatmentDetailPage/{id}', [\App\Http\Controllers\HomeController::class, 'treatmentDetailPage'])->name('home.treatmentDetailPage');
+
+    //  Treatment List Page
+    Route::get('/category/{categoryId}', [\App\Http\Controllers\HomeController::class, 'treatmentListPage'])->name('home.treatmentListPage');
+
 
 
 

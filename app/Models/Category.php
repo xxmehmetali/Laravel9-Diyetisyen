@@ -15,4 +15,11 @@ class Category extends Model
     {
         return $this->hasMany(Treatment::class, 'categoryId','id');
     }
+
+    public function getChildren(){
+        return $this->hasMany(Category::class, 'parentId', 'id');
+    }
+    public function getParent(){
+        return $this->belongsTo(Category::class, 'parentId', 'id');
+    }
 }

@@ -165,12 +165,4 @@ class TreatmentController extends Controller
         return redirect('/admin/treatment');
     }
 
-    public function treatmentDetailPage($id){
-        $treatment = \App\Models\Treatment::find($id);
-        $treatmentImages = Image::where('treatmentId', $id)->get();
-        return view('home.treatmentDetailPage', [
-            'treatment' => $treatment,
-            'treatmentImages' => $treatmentImages
-        ]);
-    }
 }

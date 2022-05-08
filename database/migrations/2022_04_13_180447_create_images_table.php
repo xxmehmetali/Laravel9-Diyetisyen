@@ -18,7 +18,7 @@ return new class extends Migration
 
             //  ON CASCADE UYGULANMADI BU TABLOYU DÜŞÜRÜP BİR DAHA MIGRATE ET
             $table->unsignedBigInteger('treatmentId');
-            $table->foreign('treatmentId')->references('id')->on('treatments')>onDelete('cascade');
+            $table->foreign('treatmentId')->references('id')->on('treatments');
 
             $table->string('title');
             $table->string('image');

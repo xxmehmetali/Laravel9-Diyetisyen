@@ -19,8 +19,10 @@ return new class extends Migration
             $table->unsignedBigInteger('orderId');
             $table->foreign('orderId')->references('id')->on('orders');
 
+            /*  bunlar hata veriyor
             $table->timestamp('appointmentTime');
             $table->timestamp('appointmentDate');
+            */
             /*
               Carbon::now()->toDateString()
                # output

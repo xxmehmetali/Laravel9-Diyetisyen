@@ -43,7 +43,7 @@
                                     <input class="form-control" type="text" name="title" placeholder="{{$data->title}}">
 
                                     <label>Description :</label>
-                                    <input id="editor" class="form-control" type="text" name="description">
+                                    <textarea class="form-control" name="description" id="editor"></textarea>
 
                                 </div>
                                 <div class="form-group col-md-6">

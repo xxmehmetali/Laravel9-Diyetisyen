@@ -43,7 +43,8 @@
 
 
                                     <label>Description :</label>
-                                    <input id="editor" class="form-control" type="text" name="description">
+                                    <textarea name="description" class="form-control" id="editor"></textarea>
+
 
                                 </div>
                                 <div class="form-group col-md-6">
