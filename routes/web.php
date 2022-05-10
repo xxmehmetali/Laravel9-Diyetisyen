@@ -125,33 +125,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/delete/{id}','destroy')->name('destroy');
     });
 
-    //  admin property
-    Route::prefix('/property')->name('property.')->controller(\App\Http\Controllers\Admin\PropertyController::class)->group(function () {
-        //  PAGES
-        Route::get('/','index')->name('index');
-        Route::get('/create','create')->name('create');
-        Route::get('/edit/{id}','edit')->name('edit');
-        Route::get('/show/{id}','show')->name('show');
-        Route::get('/getx','getx');
-        /*
-        Route::get('/gety', function (){
-            $data = Setting::find(1);//->with('getProperties')->get();
-            $data2=$data->getProperties;
-            return $data2;
-        });
-        Route::get('/getx', function (){
-            $data = \App\Models\Property::find(2)->getSetting;
-            return $data;
-        });
-*/
-        //  FUNCTIONS
-        Route::post('/store','store')->name('store');
-        Route::post('/update/{id}','update')->name('update');
-        Route::get('/delete/{id}','destroy')->name('destroy');
-
-    });
-
-
     //  admin setting
     Route::prefix('/setting')->name('setting.')->controller(\App\Http\Controllers\Admin\SettingController::class)->group(function () {
         //  PAGES
@@ -166,6 +139,49 @@ Route::prefix('admin')->name('admin.')->group(function () {
         Route::get('/delete/{id}','destroy')->name('destroy');
     });
 
+    //  admin setting > property
+    Route::prefix('/property')->name('property.')->controller(\App\Http\Controllers\Admin\PropertyController::class)->group(function () {
+        //  PAGES
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
+        Route::get('/getx','getx');
+
+        //  FUNCTIONS
+        Route::post('/store','store')->name('store');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('destroy');
+
+    });
+
+    //  admin setting > socialMedia
+    Route::prefix('/socialMedia')->name('socialMedia.')->controller(\App\Http\Controllers\Admin\SocialMediaController::class)->group(function () {
+        //  PAGES
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
+
+        //  FUNCTIONS
+        Route::post('/store','store')->name('store');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('destroy');
+    });
+
+    //  admin setting > smtp
+    Route::prefix('/smtp')->name('smtp.')->controller(\App\Http\Controllers\Admin\SmtpController::class)->group(function () {
+        //  PAGES
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
+
+        //  FUNCTIONS
+        Route::post('/store','store')->name('store');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('destroy');
+    });
 
     //  admin treatment
     Route::prefix('/treatment')->name('treatment.')->controller(\App\Http\Controllers\Admin\TreatmentController::class)->group(function () {

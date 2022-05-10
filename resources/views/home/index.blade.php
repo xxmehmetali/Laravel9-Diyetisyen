@@ -1,27 +1,9 @@
 @extends('layouts.home.frontbase')
 
+@section('customImports')
+    <link href="{{ asset('assets') }}/css/index.css" rel="stylesheet" type="text/css">
 
-
-<!--
-@section('a')
-
-    this is from index <br>
-    @parent
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset('assets') }}/js/index.js"></script>
 @endsection
-
-@section('y')
-
-    <div>
-        <h1>sec y</h1>
-    </div>
-@endsection
-
-
-@section('x')
-
-    <div>
-        <h1>sec x</h1>
-    </div>
-@endsection
--->
 
