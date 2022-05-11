@@ -21,8 +21,26 @@
                 <a href="{{ route('admin.treatment.index') }}"><i class="fa fa-medkit fa-3x" aria-hidden="true"></i>Treatments</a>
             </li>
 
+            <li>
+                <a href="{{ route('admin.setting.index') }}"><i class="fa fa-sitemap fa-3x"></i> Settings<span class="fa arrow"></span></a>
+                <ul class="nav nav-second-level">
+                    <li>
+                        <a href="{{ route('admin.property.index') }}">Properties</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.smtp.index') }}">SMTP Mail Service</a>
+                    </li>
+                    <li>
+                        <a href="{{ route('admin.socialMedia.index') }}">Social Media</a>
+                    </li>
+                </ul>
+            </li>
+
             <!-- BURADAN DEVAM ET -->
 
+            <li>
+                <a  href="ui.html"><i></i> XXXXXXXXXXXXX</a>
+            </li>
 
             <li>
                 <a  href="ui.html"><i class="fa fa-desktop fa-3x"></i> UI Elements</a>
