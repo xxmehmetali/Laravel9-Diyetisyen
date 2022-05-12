@@ -1,8 +1,12 @@
 <?php
 
+use App\Models\Setting;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Facades\DB;
+
+
 
 return new class extends Migration
 {
@@ -22,6 +26,11 @@ return new class extends Migration
             $table->string('status',6);
             $table->timestamps();
         });
+
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'PropertiesSeeder',
+            '--force' => true
+        ]);
     }
 
     /**

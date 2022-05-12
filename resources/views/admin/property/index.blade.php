@@ -31,7 +31,6 @@
                                     <th class="sorting_asc" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Rendering engine: activate to sort column ascending" style="width: 80px">ID</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 410px;">Key</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 410px;">Value</th>
-                                    <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 410px;">Setting Name</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="Browser: activate to sort column ascending" style="width: 410px;">Status</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 162px;">Edit</th>
                                     <th class="sorting" tabindex="0" aria-controls="dataTables-example" rowspan="1" colspan="1" aria-label="CSS grade: activate to sort column ascending" style="width: 162px;">Delete</th>
@@ -44,7 +43,6 @@
                                     <td>{{ $rs->id }}</td>
                                     <td>{{ $rs->key }}</td>
                                     <td>{{ $rs->value }}</td>
-                                    <td>{{ $rs->getSetting->settingName }}</td>
                                     <td>{{ $rs->status }}</td>
                                     <td class="center"><a href="{{ route('admin.property.edit', ['id'=>$rs->id]) }}" class="btn btn-primary">Edit</a></td>
                                     <td class="center"><a onclick="return confirm('Do you want to delete?')" href="{{ route('admin.property.destroy', ['id'=>$rs->id]) }}" class="btn btn-danger">Delete</a></td>

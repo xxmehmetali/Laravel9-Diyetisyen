@@ -37,7 +37,7 @@
                                 </tr>
                                 <tr>
                                     <td>Setting</td>
-                                    <td>{{ $data->getSetting->settingName }}</td>
+                                    <td>{{ Str::upper($data->getSetting->settingName) }}</td>
                                 </tr>
                                 <tr>
                                     <td>Status</td>

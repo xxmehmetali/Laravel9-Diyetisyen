@@ -32,13 +32,6 @@
                                 <label>Value :</label>
                                 <input class="form-control" type="text" name="value" placeholder="Value">
 
-                                <label>Setting :</label>
-                                <select class="form-control" name="settingId">
-                                    @foreach($settings as $rs)
-                                        <option value="{{ $rs->id }}">{{ $rs->settingName }}</option>
-                                    @endforeach
-                                </select>
-
                                 <label>Status :</label> <br>
                                 <select class="form-control" name="status">
                                     <option value="Staged">Staged</option>

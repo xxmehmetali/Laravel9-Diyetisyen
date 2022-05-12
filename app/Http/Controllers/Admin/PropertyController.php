@@ -30,10 +30,7 @@ class PropertyController extends Controller
      */
     public function create()
     {
-        $settings = Setting::all();
-        return view('admin.property.create', [
-            'settings' => $settings
-        ]);
+        return view('admin.property.create');
     }
 
     /**
@@ -47,7 +44,7 @@ class PropertyController extends Controller
         $data = new Property();
         $data->key=$request->key;
         $data->value=$request->value;
-        $data->settingId=$request->settingId;
+        $data->settingId = Setting::where('settingName', 'property')->get()[0]->id;
         $data->status=$request->status;
         $data->save();
         return redirect('admin/property/create');
@@ -61,12 +58,7 @@ class PropertyController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show(property $properties, $id)
-    {/*
-    $cars = Car::with(['brandDetails']);
-    return view('car.car_listing',compact('cars'));
-    */
-
-
+    {
         $data=Property::find($id);
 
         return view('admin.property.show',[
@@ -84,11 +76,8 @@ class PropertyController extends Controller
     public function edit(property $properties, $id)
     {
         $data=Property::find($id);
-        $settings=Setting::all();
-        return view('admin.property.edit',[
-            'data' => $data,
-            'id' => $id,
-            'settings' => $settings
+        return view('admin.property.edit', [
+            'data' => $data
         ]);
     }
 
@@ -106,7 +95,7 @@ class PropertyController extends Controller
         $data=Property::find($id);
         $data->key=$request->key;
         $data->value=$request->value;
-        $data->settingId=$request->settingId;
+        $data->settingId = Setting::where('settingName', 'property')->get()[0]->id;
         $data->status=$request->status;
         $data->updated_at=$updatedAt;
         $data->save();
