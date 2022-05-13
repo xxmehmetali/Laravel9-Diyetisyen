@@ -4,8 +4,8 @@
         <div class="row align-items-center">
             <div class="col-lg-4 col-md-12">
                 <div class="logo">
-                    <a href="index.html">
-                        <h1>Süper<span>Diyet</span></h1>
+                    <a href="{{ route('home.index') }}">
+                        <h1>{{ $homePageProperties->topbarProperties->siteName->value }}</h1>
                         <!-- <img src="img/logo.jpg" alt="Logo"> -->
                     </a>
                 </div>
@@ -18,8 +18,8 @@
                                 <i class="far fa-clock"></i>
                             </div>
                             <div class="top-bar-text">
-                                <h3>Açılış Saatleri</h3>
-                                <p>Pzt - Cuma, 8:00 - 9:00</p>
+                                <h3>{{ $homePageProperties->topbarProperties->openingHoursText->value }}</h3>
+                                <p>{{ $homePageProperties->topbarProperties->openingHoursHours->value }}</p>
                             </div>
                         </div>
                     </div>
@@ -29,8 +29,8 @@
                                 <i class="fa fa-phone-alt"></i>
                             </div>
                             <div class="top-bar-text">
-                                <h3>Bizi Arayın</h3>
-                                <p>+800-512-512</p>
+                                <h3>{{ $homePageProperties->topbarProperties->callUsText->value }}</h3>
+                                <p>{{ $homePageProperties->topbarProperties->callUsPhoneNumber->value }}</p>
                             </div>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                                 <i class="far fa-envelope"></i>
                             </div>
                             <div class="top-bar-text">
-                                <h3>Email'le ulaşın</h3>
-                                <p>diyet@superdiyet.com</p>
+                                <h3>{{ $homePageProperties->topbarProperties->contactViaEmailText->value }}</h3>
+                                <p>{{ $homePageProperties->topbarProperties->contactViaEmail->value }}</p>
                             </div>
                         </div>
                     </div>

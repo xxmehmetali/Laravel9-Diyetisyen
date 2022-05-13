@@ -41,22 +41,41 @@
             <div class="col-md-7">
                 <div class="contact-form">
                     <div id="success"></div>
-                    <form name="sentMessage" id="contactForm" novalidate="novalidate">
+                    <form name="sentMessage" id="contactForm" novalidate="novalidate" action="{{ route('admin.message.store') }}" method="POST">
+                        @csrf
                         <div class="control-group">
-                            <input type="text" class="form-control" id="name" placeholder="Ad" required="required" data-validation-required-message="Please enter your name" />
+                            <input name="name" type="text" class="form-control" id="name" placeholder="Ad / Soyad" required="required" data-validation-required-message="Please enter your name" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="email" class="form-control" id="email" placeholder="E-posta" required="required" data-validation-required-message="Please enter your email" />
+                            <input name="email" type="email" class="form-control" id="email" placeholder="E-posta" required="required" data-validation-required-message="Please enter your email" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <input type="text" class="form-control" id="subject" placeholder="Konu" required="required" data-validation-required-message="Please enter a subject" />
+                            <input name="phone" type="text" class="form-control" id="phone" placeholder="Telefon" required="required" data-validation-required-message="Please enter a phone number" />
                             <p class="help-block text-danger"></p>
                         </div>
                         <div class="control-group">
-                            <textarea class="form-control" id="message" placeholder="Mesaj" required="required" data-validation-required-message="Please enter your message"></textarea>
+                            {{-- buraya id yerine messageSubject tablosundaki generalSubject alanı yazdırılacak --}}
+                            <select name="messageSubjectId" class="form-control">
+                                @foreach($messageSubjects as $messageSubject)
+                                    <option value="{{ $messageSubject->id }}">{{ $messageSubject->generalSubject }}</option>
+                                @endforeach
+                            </select>
                             <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group">
+                            <input name="subjectTitle" type="text" class="form-control" id="phone" placeholder="Konu" required="required" data-validation-required-message="Please enter a phone number" />
+                            <p class="help-block text-danger"></p>
+                        </div>
+
+                        <div class="control-group">
+                            <textarea name="message" class="form-control" id="message" placeholder="Mesaj" required="required" data-validation-required-message="Please enter your message"></textarea>
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <div class="control-group status_hidden">
+                            <input class="ip_hidden" name="ip" />
+                            <input class="ip_hdden" name="status" value="Online" />
                         </div>
                         <div>
                             <button class="btn btn-custom" type="submit" id="sendMessageButton">Mesajı Gönder</button>
