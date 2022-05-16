@@ -19,60 +19,42 @@ use Illuminate\Support\Facades\Route;
     Route::get('/index.html', [\App\Http\Controllers\HomeController::class, 'index'])->name('home.index');
 
     //  About
-    Route::get('/about.html', function () {
-        return view('home.about');
-    });
+    Route::get('/about.html', [\App\Http\Controllers\HomeController::class, 'about'])->name('home.about');
 
     //  Service
-    Route::get('/service.html', function () {
-        return view('home.service');
-    });
+    Route::get('/service.html', [\App\Http\Controllers\HomeController::class, 'service'])->name('home.service');
 
     //  Price
-    Route::get('/prices.html', function () {
-        return view('home.prices');
-    });
+    Route::get('/prices.html', [\App\Http\Controllers\HomeController::class, 'prices'])->name('home.prices');
 
     //  Location
-    Route::get('/location.html', function () {
-        return view('home.location');
-    });
+    Route::get('/location.html', [\App\Http\Controllers\HomeController::class, 'location'])->name('home.location');
 
     //  Contact
-    //  It is redirected from controller because of transmitting data to the page.
-    Route::get('contact.html', [\App\Http\Controllers\Admin\MessageController::class, 'createContactPage']);
+    Route::get('contact.html', [\App\Http\Controllers\HomeController::class, 'contact']);
 
     //  Blog
-    Route::get('/blog.html', function () {
-        return view('home.blog');
-    });
+    Route::get('/blog.html', [\App\Http\Controllers\HomeController::class, 'blog'])->name('home.blog');
 
     //  Booking
-    Route::get('/booking.html', function () {
-        return view('home.booking');
-    });
+    Route::get('/booking.html', [\App\Http\Controllers\HomeController::class, 'booking'])->name('home.booking');
 
     //  Team
-    Route::get('/team.html', function () {
-        return view('home.team');
-    });
+    Route::get('/team.html', [\App\Http\Controllers\HomeController::class, 'team'])->name('home.team');
 
     //  USER RELATED PAGES
     //-------------------------
     //  LogIn - Register
-    Route::get('/login.html', function () {
-        return view('home.logIn-Register');
-    });
+    Route::get('/login.html', [\App\Http\Controllers\HomeController::class, 'login'])->name('home.login');
 
     //  Profile
-    Route::get('/profile.html', function () {
-        return view('home.profile');
-    });
+    Route::get('/profile.html', [\App\Http\Controllers\HomeController::class, 'profile'])->name('home.profile');
 
     //  Browse Dietitian
-    Route::get('/browseDietitian.html', function () {
-        return view('home.browseDietitian');
-    });
+    Route::get('/browseDietitian.html', [\App\Http\Controllers\HomeController::class, 'browseDietitian'])->name('home.browseDietitian');
+
+    //  Faq
+    Route::get('/faq.html', [\App\Http\Controllers\HomeController::class, 'faq'])->name('home.faq');
 
     //  Treatment Detail Page
     Route::get('/treatmentDetailPage/{id}', [\App\Http\Controllers\HomeController::class, 'treatmentDetailPage'])->name('home.treatmentDetailPage');

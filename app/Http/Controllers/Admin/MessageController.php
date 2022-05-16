@@ -133,11 +133,5 @@ class MessageController extends Controller
         return redirect('/admin/message');
     }
 
-    public function createContactPage(){
-        $messageSubjects = MessageSubject::all();
-        return view('/home/contact', [
-            'messageSubjects' => $messageSubjects
-        ]);
-    }
 
 }

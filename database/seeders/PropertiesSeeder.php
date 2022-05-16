@@ -80,8 +80,64 @@ class PropertiesSeeder extends Seeder
                     'updated_at' => $updatedAt
                 ],
                 [
+                    'key' => 'menuText',
+                    'value' => 'Menü',
+                    'settingId' => $settingId,
+                    'status' => 'Online',
+                    'created_at' => $createdAt,
+                    'updated_at' => $updatedAt
+                ],
+                [
                     'key' => 'homepageText',
                     'value' => 'Anasayfa',
+                    'settingId' => $settingId,
+                    'status' => 'Online',
+                    'created_at' => $createdAt,
+                    'updated_at' => $updatedAt
+                ],
+                [
+                    'key' => 'aboutUsText',
+                    'value' => 'Hakkımızda',
+                    'settingId' => $settingId,
+                    'status' => 'Online',
+                    'created_at' => $createdAt,
+                    'updated_at' => $updatedAt
+                ],
+                [
+                    'key' => 'servicesText',
+                    'value' => 'Servisler',
+                    'settingId' => $settingId,
+                    'status' => 'Online',
+                    'created_at' => $createdAt,
+                    'updated_at' => $updatedAt
+                ],
+                [
+                    'key' => 'pricesText',
+                    'value' => 'Ücretler',
+                    'settingId' => $settingId,
+                    'status' => 'Online',
+                    'created_at' => $createdAt,
+                    'updated_at' => $updatedAt
+                ],
+                [
+                    'key' => 'ourBranchesText',
+                    'value' => 'Şubelerimiz',
+                    'settingId' => $settingId,
+                    'status' => 'Online',
+                    'created_at' => $createdAt,
+                    'updated_at' => $updatedAt
+                ],
+                [
+                    'key' => 'contactUsText',
+                    'value' => 'Bize Ulaşın',
+                    'settingId' => $settingId,
+                    'status' => 'Online',
+                    'created_at' => $createdAt,
+                    'updated_at' => $updatedAt
+                ],
+                [
+                    'key' => 'takeAppointmentText',
+                    'value' => 'Randevu Al',
                     'settingId' => $settingId,
                     'status' => 'Online',
                     'created_at' => $createdAt,
