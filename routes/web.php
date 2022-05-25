@@ -62,21 +62,38 @@ use Illuminate\Support\Facades\Route;
     //  Treatment List Page
     Route::get('/category/{categoryId}', [\App\Http\Controllers\HomeController::class, 'treatmentListPage'])->name('home.treatmentListPage');
 
-
+    //  Logout
+    Route::get('/logout', [\App\Http\Controllers\HomeController::class, 'logout'])->name('home.logout');
 
 
 //  ----------  END OF FRONTSTORE PAGES  ----------
 
 
-
+Route::get('/adminlogin.html', function () {
+    return view('admin.logIn-Register');
+})->name('adminlogin');
 
 
 //  ************  ADMIN STARTS HERE  ************
-Route::prefix('admin')->name('admin.')->group(function () {
+Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
     //  ----------  ADMIN PAGES  ----------
 
     //  admin : index
     Route::get('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('index');
+    Route::post('/',[\App\Http\Controllers\Admin\HomeController::class,'index'])->name('index');
+
+    //  admin : login / register
+    //  this is for pages
+    Route::get('/login.html', function () {
+        return view('admin.logIn-Register');
+    });
+
+    //  these are for the login and logout functions
+    Route::post('/adminlogin.html',[\App\Http\Controllers\Admin\HomeController::class,'login'])->name('login');
+    Route::post('/adminregister.html',[\App\Http\Controllers\Admin\HomeController::class,'register'])->name('register');
+
+    //  admin : logout
+    Route::get('/adminlogout.html',[\App\Http\Controllers\Admin\HomeController::class,'logout'])->name('logout');
 
     //  admin faq
     Route::prefix('/faq')->name('faq.')->controller(\App\Http\Controllers\Admin\FaqController::class)->group(function () {
@@ -185,7 +202,6 @@ Route::prefix('admin')->name('admin.')->group(function () {
         */
     });
 
-
     //  admin message
     Route::prefix('/message')->name('message.')->controller(\App\Http\Controllers\Admin\MessageController::class)->group(function () {
         //  PAGES
@@ -219,6 +235,26 @@ Route::prefix('admin')->name('admin.')->group(function () {
         //  Is not necessary to have treatmentId
         Route::post('/update/{id}','update')->name('update');
         Route::get('/delete/{id}/{treatmentId}','destroy')->name('destroy');
+    });
+
+    //  admin treatment image gallery // treatment sub images
+    Route::prefix('/user')->name('user.')->controller(\App\Http\Controllers\Admin\AdminUserController::class)->group(function () {
+        //  PAGES
+        //  create / edit page has been deactivated.
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        //Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
+
+        //  FUNCTIONS
+        Route::post('/store','store')->name('store');
+
+        // the id at the below is user_id
+        Route::post('/addRole/{id}','addRole')->name('addRole');
+        Route::post('/destroyRole/{id}/{role_id}','destroyRole')->name('destroyRole');
+        //Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('destroy');
+
     });
 
     //  ----------  END OF ADMIN PAGES  ----------

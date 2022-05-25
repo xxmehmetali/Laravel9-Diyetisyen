@@ -2,7 +2,17 @@
 <div class="container rounded bg-white mt-5 mb-5" style="border: 2px solid gray; padding: 40px; box-shadow: 10px 10px 8px #888888;">
     <div class="row">
         <div class="col-md-3 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg"><span class="font-weight-bold">Edogaru</span><span class="text-black-50">edogaru@mail.com.my</span><span> </span></div>
+            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" width="150px" src="https://st3.depositphotos.com/15648834/17930/v/600/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg">
+                <span class="font-weight-bold">
+                    @auth
+                        {{ Auth::user()->name }}
+                    @endauth
+                </span>
+                <span class="text-black-50">
+                    {{ Auth::user()->email }}
+                </span>
+                <span> </span>
+            </div>
         </div>
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
