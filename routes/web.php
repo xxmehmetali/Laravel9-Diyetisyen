@@ -68,7 +68,7 @@ use Illuminate\Support\Facades\Route;
 
 //  ----------  END OF FRONTSTORE PAGES  ----------
 
-
+Route::post('/adminlogin.html',[\App\Http\Controllers\Admin\HomeController::class,'login'])->name('login');
 Route::get('/adminlogin.html', function () {
     return view('admin.logIn-Register');
 })->name('adminlogin');
@@ -84,9 +84,9 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
 
     //  admin : login / register
     //  this is for pages
-    Route::get('/login.html', function () {
-        return view('admin.logIn-Register');
-    });
+//    Route::get('/login.html', function () {
+//        return view('admin.logIn-Register');
+//    });
 
     //  these are for the login and logout functions
     Route::post('/adminlogin.html',[\App\Http\Controllers\Admin\HomeController::class,'login'])->name('login');

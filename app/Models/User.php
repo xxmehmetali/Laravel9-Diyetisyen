@@ -81,4 +81,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Order::class, 'patientId','id');
     }
+
+    public function getRoles()
+    {
+        return $this->belongsToMany(Role::class, 'role_users');
+    }
 }
