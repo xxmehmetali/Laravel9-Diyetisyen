@@ -6,6 +6,7 @@
                 <div class="row">
                     <div class="col-lg-4">
                         <div class="location-form" style="background-color:#4f0000">
+                            <!--
                             <h3>Giriş Yap</h3>
                             <form>
                                 <div class="control-group">
@@ -18,10 +19,13 @@
                                     <button class="btn btn-custom" type="submit">Giriş Yap !</button>
                                 </div>
                             </form>
+                            -->
+                            @include('auth.login')
                         </div>
                     </div>
                     <div class="col-lg-8">
                         <div class="location-form" style="background-color:#18615e">
+                            <!--
                             <h3>Kayıt Ol</h3>
                             <form>
                                 <div class="control-group">
@@ -40,6 +44,8 @@
                                     <button class="btn btn-custom" type="submit">Kayıt Ol !</button>
                                 </div>
                             </form>
+                            -->
+                            @include('auth.register')
                         </div>
                     </div>
                 </div>
