@@ -13,17 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('settings', function (Blueprint $table) {
-            $table->id();
-            $table->string('settingName');
-            $table->string('status',6);
-            $table->timestamps();
+        Schema::create('role_users', function (Blueprint $table) {
+            $table->unsignedBigInteger('role_id');
+            $table->unsignedBigInteger('user_id');
         });
-
-        \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--class' => 'SettingsSeeder',
-            '--force' => true
-        ]);
     }
 
     /**
@@ -33,6 +26,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('settings');
+        Schema::dropIfExists('role_users');
     }
 };

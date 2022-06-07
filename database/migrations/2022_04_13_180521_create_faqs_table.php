@@ -20,6 +20,11 @@ return new class extends Migration
             $table->string('status');
             $table->timestamps();
         });
+
+        \Illuminate\Support\Facades\Artisan::call('db:seed', [
+            '--class' => 'FaqsSeeder',
+            '--force' => true
+        ]);
     }
 
     /**

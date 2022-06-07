@@ -13,20 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('categories', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('parentId')->nullable();
-            $table->foreign('parentId')->references('id')->on('categories')->onDelete('cascade');
-            $table->string('title',50);
-            $table->string('keywords',255);
-            $table->string('description',255);
-            $table->string('image')->nullable();
-            $table->string('status',6);
+            $table->string('name');
             $table->timestamps();
         });
 
         \Illuminate\Support\Facades\Artisan::call('db:seed', [
-            '--class' => 'CategoriesSeeder',
+            '--class' => 'RolesSeeder',
             '--force' => true
         ]);
     }
@@ -38,6 +32,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('categories');
+        Schema::dropIfExists('roles');
     }
 };

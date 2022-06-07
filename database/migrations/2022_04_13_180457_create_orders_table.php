@@ -28,10 +28,7 @@ return new class extends Migration
             $table->foreign('treatmentId')->references('id')->on('treatments');
 
             $table->timestamp('orderDate');
-
-
-            //$table->integer('price');
-            $table->integer('totalPrice');
+            $table->integer('price');
 
             //  kredi kartı/havale/banka kartı ...
             $table->string('paymentType');
@@ -39,9 +36,9 @@ return new class extends Migration
             $table->string('ip_address', 45)->nullable();
             $table->string('doctorNote');
 
-            //  status => false / true
-            //  false means order IS NOT APPROVED
-            //  true means order IS APPROVED
+//              status => false / true
+//              false means order IS NOT APPROVED
+//              true means order IS APPROVED
             $table->string('status');
             $table->timestamps();
         });

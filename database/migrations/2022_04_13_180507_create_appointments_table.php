@@ -23,7 +23,7 @@ return new class extends Migration
             $table->timestamp('appointmentTime');
             $table->timestamp('appointmentDate');
             */
-            /*
+            /*<
               Carbon::now()->toDateString()
                # output
                 # 2021-07-02
