@@ -65,6 +65,19 @@ use Illuminate\Support\Facades\Route;
     //  Logout
     Route::get('/logout', [\App\Http\Controllers\HomeController::class, 'logout'])->name('home.logout');
 
+    Route::post('/userProfileSave',[\App\Http\Controllers\UserController::class,'profileSave'])->name('user.profileSave');
+
+    Route::get('/userPanel.html', [\App\Http\Controllers\UserController::class, 'userPanel'])->name('user.userPanel');
+
+    Route::get('/myOrders/{user_id}', [\App\Http\Controllers\UserController::class, 'myOrders'])->name('home.myOrders');
+
+    Route::get('/myReviews/{user_id}', [\App\Http\Controllers\UserController::class, 'myReviews'])->name('user.myReviews');
+
+    Route::get('/onGoingPackets/{user_id}', [\App\Http\Controllers\UserController::class, 'onGoingPackets'])->name('user.onGoingPackets');
+
+    Route::get('/addToCart/{user_id}/{treatment_id}', [\App\Http\Controllers\ShopCartController::class, 'addToCart'])->name('user.addToCart');
+
+    Route::get('/removeFromCart/{user_id}/{treatment_id}', [\App\Http\Controllers\ShopCartController::class, 'removeFromCart'])->name('user.removeFromCart');
 
 //  ----------  END OF FRONTSTORE PAGES  ----------
 
@@ -72,6 +85,7 @@ Route::post('/adminlogin.html',[\App\Http\Controllers\Admin\HomeController::clas
 Route::get('/adminlogin.html', function () {
     return view('admin.logIn-Register');
 })->name('adminlogin');
+
 
 
 //  ************  ADMIN STARTS HERE  ************
