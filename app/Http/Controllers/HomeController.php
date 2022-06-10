@@ -4,12 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\CategoryController;
 use App\Models\Category;
+use App\Models\Comment;
 use App\Models\Faq;
 use App\Models\Image;
 use App\Models\MessageSubject;
 use App\Models\Property;
 use App\Models\Treatment;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -151,14 +153,18 @@ class HomeController extends Controller
 
     public function treatmentDetailPage($id){
         $treatment = \App\Models\Treatment::find($id);
-        $treatmentImages = Image::where('treatmentId', $id)->get();
+        $treatmentImages = Image::where('treatmentId', $id);
         $homePageProperties = FrontstorePropertyBuilderController::homePagePropertyBuilder();
+        $comments = Comment::where('treatmentId', $treatment->id)->get();
+        //dd($comments);
+            //Setting::where('settingName', 'property')->get()[0]->id;
         return view('home.treatmentDetailPage', [
             'homePageProperties' => $homePageProperties,
             'treatment' => $treatment,
             'treatmentImages' => $treatmentImages,
             'categories' => self::getMainCategories(),
-            'categoriesForNavbar' => self::getMainCategories()
+            'categoriesForNavbar' => self::getMainCategories(),
+            'comments' => $comments
         ]);
     }
 
@@ -173,6 +179,16 @@ class HomeController extends Controller
         ]);
     }
 
+
+    public function logout(Request $request){
+        $homePageProperties = FrontstorePropertyBuilderController::faqPagePropertyBuilder();
+
+        Auth::logout();
+        $request->session()->invalidate();
+        $request>session()->regenerateToken();
+
+        return redirect('/');
+    }
 
 
 }

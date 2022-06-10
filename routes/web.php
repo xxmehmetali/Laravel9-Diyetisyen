@@ -75,9 +75,11 @@ use Illuminate\Support\Facades\Route;
 
     Route::get('/onGoingPackets/{user_id}', [\App\Http\Controllers\UserController::class, 'onGoingPackets'])->name('user.onGoingPackets');
 
-    Route::get('/addToCart/{user_id}/{treatment_id}', [\App\Http\Controllers\ShopCartController::class, 'addToCart'])->name('user.addToCart');
+    Route::post('/addToCart', [\App\Http\Controllers\ShopCartController::class, 'addToCart'])->name('user.addToCart');
 
     Route::get('/removeFromCart/{user_id}/{treatment_id}', [\App\Http\Controllers\ShopCartController::class, 'removeFromCart'])->name('user.removeFromCart');
+
+    Route::get('/basket/{user_id}', [\App\Http\Controllers\ShopCartController::class, 'basket'])->name('user.basket');
 
 //  ----------  END OF FRONTSTORE PAGES  ----------
 

@@ -36,6 +36,13 @@
                 </ul>
             </li>
 
+            <li>
+                <a href="{{ route('admin.faq.index') }}"><i class="fa fa-question-circle fa-3x" aria-hidden="true"></i>Faqs</a>
+            </li>
+
+            <li>
+                <a href="{{ route('admin.user.index') }}"><i class="fa fa-user fa-3x" aria-hidden="true"></i>Users</a>
+            </li>
             <!-- BURADAN DEVAM ET -->
 
             <li>

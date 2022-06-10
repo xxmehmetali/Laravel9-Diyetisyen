@@ -15,7 +15,7 @@
 
     <div class="row">
         <div class="col-md-12 margin">
-            <a href="{{ route('admin.socialMedia.create') }}" class="btn btn-primary">Add SocialMedia</a>
+            <a href="{{ route('admin.user.create') }}" class="btn btn-primary">Add User</a>
         </div>
         <div class="col-md-12">
             <!-- Advanced Tables -->

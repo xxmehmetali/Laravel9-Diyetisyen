@@ -36,8 +36,11 @@
                                     <label>Status :</label> <br>
                                     <select class="form-control" name="status">
                                         <option selected>{{$data->status}}</option>
-                                        <option value="Staged">Staged</option>
+                                        @if($data->status=="Online")
+                                            <option value="Staged">Staged</option>
+                                        @else
                                         <option value="Online">Online</option>
+                                        @endif
                                     </select>
                                 </div>
 
