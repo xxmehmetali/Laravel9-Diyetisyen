@@ -18,6 +18,11 @@ sonra php artisan migrate i çalıştır
     messageSubjects / php artisan migrate --path=/database/migrations/2022_05_01_111100_create_message_subjects_table.php
  comments tablosu migrate olurken hata veriyor. bu yüzden yukarıdaki şekildeki gibi ilk önce  category sonra treatments tablosunu migrate edip
  sonra düz "php artisan migrate" komutu çalıştırılmalı.
+
+ migration sırasını aşağıdaki gibi düzeltebilirsin. tarihlere göre sıra takip ediyor. sıkıntı çıkan tabloları erkene al.
+ Change the dates that form the first part of the migration filenames so they're in the order you want (eg. for 2014_06_24_134109_update_database.php, the date & time is 2014-06-24, 13:41:09);
+ https://docs.github.com/en/repositories/working-with-files/managing-files/renaming-a-file
+
 --------------------------------------------------------------
 
 
@@ -34,9 +39,69 @@ model oluşturma:
 
 not: formatlı text i göstermek için td ye şu eklenir :style="white-space: pre-wrap;">
 
-22.videoya başla
+35.videoya başla
 ck editorü treatment ve category için uyguladın
 yeni tablolar için uygula (detail ve description alanı içeren tablolar)
 
+eksikler:
+yorum atınca db ye eklenecek ve ilgili product ın altında görünecek
 
 
+
+seeders ve migraiton sırasında seeder çağırma:
+-----------------
+https://www.youtube.com/watch?v=SLEWYV43Jxo
+https://www.youtube.com/watch?v=s_pKAgYarfI&t=2s
+
+
+python kodu: property generator
+def x(listOfParams):
+    for val in listOfParams:
+
+        print("""public static function get"""+val.capitalize().replace('text', 'Text')+"""(){
+        return Property::where('key', '"""+val+"""')->get()[0];
+    }""")
+
+
+def y(listOfParams):
+    for val in listOfParams:
+
+        print("$object->"""+val+""" = PropertyBuilderController::get"""+val.capitalize().replace('text', 'Text')+"();")
+
+def z(listOfParams):
+    for val in listOfParams:
+        print("""
+        [
+            'key' => '"""+val+"""',
+            'value' => '',
+            'settingId' => $settingId,
+            'status' => 'Online',
+            'created_at' => $createdAt,
+            'updated_at' => $updatedAt
+        ],""")
+
+    #servicesText,pricesText,ourBranchesText,contactUsText,takeAppointmentText
+a_string = input("Enter your value: ")
+listOfParams = a_string.split(",")
+
+print("\n------------------------------------------\nPropertyBuilderController\n")
+x(listOfParams)
+print("\n------------------------------------------\nPagepartsPropertyBuilderController\n")
+y(listOfParams)
+print("\n------------------------------------------\PropertySeeder\n")
+z(listOfParams)
+
+
+-------------------------------------------------------------------------------
+db verileri json olarak çıkarma
+    SELECT JSON_OBJECT
+        ('id ', id ,
+        'parentId ', parentId,
+        'title ', title ,
+        'keywords ', keywords ,
+        'description ', description ,
+        'image ', image ,
+        'status ', status ,
+        'created_at ', created_at ,
+            'updated_at ', updated_at )
+          FROM categories INTO OUTFILE 'C:/Users/xxmeh/Music/x.json'

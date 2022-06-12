@@ -23,7 +23,9 @@
     <link href="{{ asset('assets') }}/css/style.css" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets') }}/css/common.css" rel="stylesheet" type="text/css">
 
+
     <script src="{{ asset('assets') }}/js/common.js"></script>
+
 
     @yield('customImports')
 </head>

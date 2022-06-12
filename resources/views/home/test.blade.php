@@ -1,12 +1,2 @@
-@foreach($categoriesx as $category)
+{{ $object->siteName->value }}
 
-    ana kategori : {{ $category->title }}
-    <br>
-    alt kategorileri :
-    @foreach($category->getChildren as $child)
-        ({{ $child->title }})
-    @endforeach
-    <br>
-
-
-@endforeach

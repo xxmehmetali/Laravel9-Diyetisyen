@@ -1569,198 +1569,46 @@
     .spacer--grey {
         background: #f8f9fa
     }
-
-    ;
 </style>
 
 <body>
 
-<header class="header" data-component="Header">
-    <div class="header__container">
-        <a class="link header__logo " href="#fa-border">
-            <!-- <img decoding="async" loading="lazy" src="" width="30px" height="30px" alt="" role="presentation" /> -->
-            <span class="mobile-before-hero-only"> FAQ</span>
-        </a>
-
-        <div class="header__aside">
-            <div class="header__aside__buttons">
-                <a class="button            button--low            button--mobile-after-hero-only susan-storm-large susan-storm-medium susan-storm-small" href="#" data-action="for work" data-category="cta" data-label="header">Para trabajar</a>
-                <a class="button                     button--medium            button--mobile-before-hero-only" href="#" data-action="sign in" data-category="cta" data-label="header">Contactar</a>
-                <a class="button    button--mobile-after-hero-only susan-storm-large susan-storm-medium susan-storm-small" href="#" data-action="create an account" data-category="cta" data-label="header"><span class="mobile-tablet-only">Obtén Gmail</span><span class="laptop-desktop-only">Crea una cuenta</span></a>
-            </div>
-        </div>
-    </div>
-</header>
-
-
 <main class="main">
-
-
-
-
     <div class="spacer spacer--large spacer--grey "> </div>
-
-
-
     <div class="faq " data-component="Faq ">
         <div class="faq__grid ">
-            <div class="faq__grid__chapter ">
-                <div class="faq__grid__chapter__title ">
-                    Encuentra las respuestas que necesitas
-                </div>
-                <div class="faq__grid__chapter__card ">
-                    <div class="faq__grid__chapter__card__title ">
-                        ¿Necesitas más ayuda?
-                    </div>
-                    <div class="faq__grid__chapter__card__body ">
-                        Con mucho gusto platicamos, estoy para ayudarte. No estas solo.
-                    </div>
-
-
-
-                    <div class="w3-main w3-container w3-center ">
-                        <!-- The Contact Section -->
-                        <div class="w3-container w3-content ">
-
-                            <form id="formulario" class="formulario">
-                                Nombre
-                                <div class="box-input">
-                                    <input name="nombre" id="nombre" type="text" required>
-                                    <span data-placeholder="Nombre"></span>
-                                </div>
-                                Email
-                                <div class="box-input">
-                                    <input name="email" id="email" type="email" required>
-                                    <span data-placeholder="email"></span>
-                                </div>
-                                Motivo de contacto
-                                <div class="box-input">
-                                    <input name="apellidos" id="apellidos" type="text" required>
-                                    <span data-placeholder="Motivo de contacto"></span>
-                                </div>
-                                <br>
-                                <button class="button w3-border w3-round-large" style="vertical-align:middle" id="submit" type="submit" onclick="alert( 'A continuación se abrira whatsapp, solo dale enviar al mensaje que tendrá los datos que acabas de llenar. Gracias') "><i class="fab fa-whatsapp"></i> <span><b>Enviar por WhatsApp</b> </span></button><br>
-                            </form>
-
-
-                        </div>
-
-                    </div>
-
-
-
-
-
-
-
-
-                    <div class="faq__grid__chapter__card__buttons ">
-                    </div>
-                </div>
-            </div>
-
-
             <div class="faq__grid__faqs ">
 
-                <details class="faq__grid__faqs__faq " open>
-                    <summary class="faq__grid__faqs__faq__button " data-category="faq " data-label="¿Cuánto tiempo dura la sesión? ">
-                        <div class="faq__grid__faqs__faq__button__content ">
-                            <div class="faq__grid__faqs__faq__button__title ">
-                                ¿Cuánto tiempo dura la sesión?
+                @foreach($orders as $order)
+                    <details class="faq__grid__faqs__faq ">
+                        <summary class="faq__grid__faqs__faq__button " data-category="faq " data-label="Opciones de pago ">
+                            <div class="faq__grid__faqs__faq__button__content ">
+                                <div class="faq__grid__faqs__faq__button__title ">
+                                    Paket : {{ $order->getTreatment->title }} / Şu tarihte sipariş verildi : {{ $order->orderDate }}
+                                </div>
+                                <div class="faq__grid__faqs__faq__button__arrow ">
+                                    <svg width="19 " height="12 " viewBox="0 0 19 12 " fill="none " xmlns="http://www.w3.org/2000/svg ">
+                                        <path d="M16.385 0.884766L9.5 7.75477L2.615 0.884766L0.5 2.99977L9.5 11.9998L18.5 2.99977L16.385 0.884766Z " fill="#1A73E8 "/>
+                                    </svg>
+                                </div>
                             </div>
-                            <div class="faq__grid__faqs__faq__button__arrow ">
-                                <svg width="19 " height="12 " viewBox="0 0 19 12 " fill="none " xmlns="http://www.w3.org/2000/svg ">
-                                    <path d="M16.385 0.884766L9.5 7.75477L2.615 0.884766L0.5 2.99977L9.5 11.9998L18.5 2.99977L16.385 0.884766Z " fill="#1A73E8 "/>
-                                </svg>
-                            </div>
+                        </summary>
+                        <div class="faq__grid__faqs__faq__body ">
+                            Paket açıklaması: <br>
+                            {!!  $order->getTreatment->description !!}
                         </div>
-                    </summary>
-                    <div class="faq__grid__faqs__faq__body ">
-                        De 50 a 60 minutos por sesión.
-                    </div>
-
-                </details>
-
-                <details class="faq__grid__faqs__faq ">
-                    <summary class="faq__grid__faqs__faq__button " data-category="faq " data-label="¿Es virtual la sesión? ">
-                        <div class="faq__grid__faqs__faq__button__content ">
-                            <div class="faq__grid__faqs__faq__button__title ">
-                                ¿Es virtual la sesión?
-                            </div>
-                            <div class="faq__grid__faqs__faq__button__arrow ">
-                                <svg width="19 " height="12 " viewBox="0 0 19 12 " fill="none " xmlns="http://www.w3.org/2000/svg ">
-                                    <path d="M16.385 0.884766L9.5 7.75477L2.615 0.884766L0.5 2.99977L9.5 11.9998L18.5 2.99977L16.385 0.884766Z " fill="#1A73E8 "/>
-                                </svg>
-                            </div>
-                        </div>
-                    </summary>
-                    <div class="faq__grid__faqs__faq__body ">
-                        Si, por Zoom.
-                    </div>
-
-                </details>
-
-                <details class="faq__grid__faqs__faq ">
-                    <summary class="faq__grid__faqs__faq__button " data-category="faq " data-label="¿Cuáles son los precios? ">
-                        <div class="faq__grid__faqs__faq__button__content ">
-                            <div class="faq__grid__faqs__faq__button__title ">
-                                ¿Cuáles son los precios?
-                            </div>
-                            <div class="faq__grid__faqs__faq__button__arrow ">
-                                <svg width="19 " height="12 " viewBox="0 0 19 12 " fill="none " xmlns="http://www.w3.org/2000/svg ">
-                                    <path d="M16.385 0.884766L9.5 7.75477L2.615 0.884766L0.5 2.99977L9.5 11.9998L18.5 2.99977L16.385 0.884766Z " fill="#1A73E8 "/>
-                                </svg>
-                            </div>
-                        </div>
-                    </summary>
-                    <div class="faq__grid__faqs__faq__body ">
-                        Una sesión por $30. Recomendamos 5. La promoción es.
-                    </div>
 
 
-                    <!--  <a class="link faq__grid__faqs__faq__cta " href="# " target="_blank " rel="noreferrer noopener "> Más información  </a> -->
 
+                    </details>
+                @endforeach
 
-                </details>
-
-                <details class="faq__grid__faqs__faq ">
-                    <summary class="faq__grid__faqs__faq__button " data-category="faq " data-label="Opciones de pago ">
-                        <div class="faq__grid__faqs__faq__button__content ">
-                            <div class="faq__grid__faqs__faq__button__title ">
-                                Opciones de pago
-                            </div>
-                            <div class="faq__grid__faqs__faq__button__arrow ">
-                                <svg width="19 " height="12 " viewBox="0 0 19 12 " fill="none " xmlns="http://www.w3.org/2000/svg ">
-                                    <path d="M16.385 0.884766L9.5 7.75477L2.615 0.884766L0.5 2.99977L9.5 11.9998L18.5 2.99977L16.385 0.884766Z " fill="#1A73E8 "/>
-                                </svg>
-                            </div>
-                        </div>
-                    </summary>
-                    <div class="faq__grid__faqs__faq__body ">
-                        Deposito Banco Azteca
-                    </div>
-
-
-                    <a class="link faq__grid__faqs__faq__cta " href="# " target="_blank " rel="noreferrer noopener ">Más información</a>
-
-
-                </details>
 
             </div>
-
-
         </div>
-
-
-
-
     </div>
-
     <div class="spacer spacer--large spacer--grey "></div>
-
-
 </main>
-
 
 
 </body>

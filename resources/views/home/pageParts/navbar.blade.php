@@ -32,15 +32,12 @@
                     </li>
                     <a href="contact.html" class="nav-item nav-link">{{ $homePageProperties->navbarProperties->contactUsText->value }}</a>
                 </div>
-                {{--
-                <div class="ml-auto">
-                    <a class="btn btn-custom" href="#">{{ $homePageProperties->navbarProperties->takeAppointmentText->value }}</a>
-                </div>
-                --}}
+
                 <div class="ml-auto">
                     @auth
                         <a class="btn btn-custom" href="profile.html">Profilim</a>
                         <a class="btn btn-custom" href="logout">Çıkış Yap</a>
+                        <a class="btn btn-custom" href="basket/{{ Auth::user()->id }}">Sepet</a>
                     @endauth
                     @guest
                             <a class="btn btn-custom" href="login.html">Giriş Yap / Kayıt Ol</a>

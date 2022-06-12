@@ -81,6 +81,11 @@ use Illuminate\Support\Facades\Route;
 
     Route::get('/basket/{user_id}', [\App\Http\Controllers\ShopCartController::class, 'basket'])->name('user.basket');
 
+    Route::post('/payment', [\App\Http\Controllers\ShopCartController::class, 'payment'])->name('user.payment');
+
+    Route::post('/paymentProcess', [\App\Http\Controllers\PaymentController::class, 'paymentProcess'])->name('user.paymentProcess');
+
+
 //  ----------  END OF FRONTSTORE PAGES  ----------
 
 Route::post('/adminlogin.html',[\App\Http\Controllers\Admin\HomeController::class,'login'])->name('login');

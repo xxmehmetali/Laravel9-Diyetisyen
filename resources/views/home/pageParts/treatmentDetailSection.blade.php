@@ -43,43 +43,17 @@
                             </div>
 
                             <!-- <form method="post" enctype="multipart/form-data" id="AddToCartForm"> -->
-                            <form id="AddToCartForm">
-                                <select name="id" id="productSelect" quickbeam="product" class="product-single__variants">
-                                    <option  selected="selected"  data-sku="" value="7924994501">
-                                        M / Blue - $800.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924995077">
-                                        M / Red - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994437">
-                                        L / Blue - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994693">
-                                        L / Yellow - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924995013">
-                                        L / Red - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994373">
-                                        XL / Blue - $900.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994629">
-                                        XL / Yellow - $850.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924830021">
-                                        XXL / Blue - $950.00 USD
-                                    </option>
-                                    <option  data-sku="" value="7924994885">
-                                        XXL / Red - $850.00 USD
-                                    </option>
-                                </select>
+                            <form id="AddToCartForm" method="post" action="{{ route('user.addToCart') }}">
+                                @csrf
+                                <input type="hidden" name="treatment_id" value="{{ $treatment->id }}">
+                                <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
+
                                 <div class="btn-and-quantity-wrap">
                                     <div class="btn-and-quantity">
                                         <a href="">
-                                            <div id="AddToCart" quickbeam="add-to-cart">
-                                                <span id="AddToCartText">Satın Al</span>
-                                            </div>
+                                            <input type="submit" class="btn btn-primary" value="Sepete Ekle">
                                         </a>
+
                                     </div>
                                 </div>
                             </form>

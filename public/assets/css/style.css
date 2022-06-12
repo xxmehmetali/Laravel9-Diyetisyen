@@ -2054,3 +2054,21 @@ a:focus {
 .footer .copyright p a:hover {
     color: #ffffff;
 }
+
+.basketItem {
+    width: 200px;
+    border: 2px solid black;
+    display: inline-block;
+
+}
+.basketItemImage {
+    width: 100%;
+}
+
+.paymentContainer {
+    width: 55%;
+    border: 1px solid grey;
+    padding: 1rem;
+    margin: auto;
+    margin-top: 30px;
+}
