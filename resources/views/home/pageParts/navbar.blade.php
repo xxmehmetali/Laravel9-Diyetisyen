@@ -35,7 +35,7 @@
 
                 <div class="ml-auto">
                     @auth
-                        <a class="btn btn-custom" href="profile.html">Profilim</a>
+                        <a class="btn btn-custom" href="{{ route('user.userPanel') }}">Panel</a>
                         <a class="btn btn-custom" href="logout">Çıkış Yap</a>
                         <a class="btn btn-custom" href="basket/{{ Auth::user()->id }}">Sepet</a>
                     @endauth

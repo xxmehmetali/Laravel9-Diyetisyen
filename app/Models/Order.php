@@ -16,4 +16,9 @@ class Order extends Model
         return $this->hasOne(Treatment::class, 'id','treatmentId');
     }
 
+    public function getUser()
+    {
+        return $this->belongsTo(User::class, 'patientId','id');
+    }
+
 }

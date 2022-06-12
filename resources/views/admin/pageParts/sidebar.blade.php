@@ -43,6 +43,15 @@
             <li>
                 <a href="{{ route('admin.user.index') }}"><i class="fa fa-user fa-3x" aria-hidden="true"></i>Users</a>
             </li>
+
+            <li>
+                <a href="{{ route('admin.comment.index') }}"><i class="fa fa-comment fa-3x" aria-hidden="true"></i>Comments</a>
+            </li>
+
+            <li>
+                <a href="{{ route('admin.appointment.index') }}"><i class="fa fa-calendar fa-3x" aria-hidden="true"></i>Appointments</a>
+            </li>
+
             <!-- BURADAN DEVAM ET -->
 
             <li>

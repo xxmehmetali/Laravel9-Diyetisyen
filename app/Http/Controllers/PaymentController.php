@@ -28,7 +28,7 @@ class PaymentController extends Controller
         $order->treatmentId=$request->treatment_id;
         $order->price=$request->price;
         $order->paymentType=$request->paymentType;
-        $order->status="success";
+        $order->status="ongoing";
         $order->doctorNote="no note";
 
         $order->save();

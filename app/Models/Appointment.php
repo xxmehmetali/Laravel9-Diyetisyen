@@ -11,4 +11,10 @@ class Appointment extends Model
     protected $casts = [
         'appointmentTime' => 'date:hh:mm'
     ];
+
+
+    public function getOrder()
+    {
+        return $this->hasOne(Order::class, 'id','orderId');
+    }
 }

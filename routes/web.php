@@ -85,6 +85,19 @@ use Illuminate\Support\Facades\Route;
 
     Route::post('/paymentProcess', [\App\Http\Controllers\PaymentController::class, 'paymentProcess'])->name('user.paymentProcess');
 
+    Route::post('/sendComment', [\App\Http\Controllers\UserController::class, 'sendComment'])->name('user.sendComment');
+
+    Route::post('/createTreatmentByDoctor', [\App\Http\Controllers\UserController::class, 'createTreatmentByDoctor'])->name('user.createTreatmentByDoctor');
+
+    Route::get('/myPatients/{doctor_id}', [\App\Http\Controllers\UserController::class, 'myPatients'])->name('user.myPatients');
+
+    Route::get('/patientAppointments/{doctor_id}/{patient_id}', [\App\Http\Controllers\UserController::class, 'patientAppointments'])->name('user.patientAppointments');
+
+    Route::get('/allAppointments/{order_id}', [\App\Http\Controllers\UserController::class, 'allAppointments'])->name('user.allAppointments');
+
+    Route::get('/assessAppointment/{appointment_id}', [\App\Http\Controllers\UserController::class, 'assessAppointment'])->name('user.assessAppointment');
+
+    Route::post('/assessAppointmentAction', [\App\Http\Controllers\UserController::class, 'assessAppointmentAction'])->name('user.assessAppointmentAction');
 
 //  ----------  END OF FRONTSTORE PAGES  ----------
 
@@ -122,6 +135,31 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('/','index')->name('index');
         Route::get('/create','create')->name('create');
         Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
+
+        //  FUNCTIONS
+        Route::post('/store','store')->name('store');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('destroy');
+    });
+
+    //  admin comment
+    Route::prefix('/comment')->name('comment.')->controller(\App\Http\Controllers\Admin\CommentController::class)->group(function () {
+        //  PAGES
+        Route::get('/','index')->name('index');
+        Route::get('/show/{id}','show')->name('show');
+
+        //  FUNCTIONS
+        Route::post('/store','store')->name('store');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('destroy');
+        Route::get('/approve/{comment_id}','approve')->name('approve');
+    });
+
+    //  admin appointment
+    Route::prefix('/appointment')->name('appointment.')->controller(\App\Http\Controllers\Admin\AppointmentController::class)->group(function () {
+        //  PAGES
+        Route::get('/','index')->name('index');
         Route::get('/show/{id}','show')->name('show');
 
         //  FUNCTIONS
@@ -215,12 +253,7 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::post('/store','store')->name('store');
         Route::post('/update/{id}','update')->name('update');
         Route::get('/delete/{id}','destroy')->name('destroy');
-        /*
-        Route::get('/getcategory', function (){
-            $data = \App\Models\Category::find(1);
-            return $data->getTreatments;
-        });
-        */
+
     });
 
     //  admin message
@@ -237,6 +270,23 @@ Route::middleware('admin')->prefix('admin')->name('admin.')->group(function () {
         Route::post('/store','store')->name('store');
         //Route::post('/update/{id}','update')->name('update');
         //Route::get('/delete/{id}','destroy')->name('destroy');
+
+    });
+
+    //  admin message subjects
+    Route::prefix('/messageSubjects')->name('messageSubjects.')->controller(\App\Http\Controllers\Admin\MessageSubjectController::class)->group(function () {
+        //  PAGES
+        //  create / edit page has been deactivated.
+        Route::get('/','index')->name('index');
+        Route::get('/create','create')->name('create');
+        Route::get('/edit/{id}','edit')->name('edit');
+        Route::get('/show/{id}','show')->name('show');
+
+        //  FUNCTIONS
+        //  create / edit functions has been deactivated.
+        Route::post('/store','store')->name('store');
+        Route::post('/update/{id}','update')->name('update');
+        Route::get('/delete/{id}','destroy')->name('destroy');
 
     });
 
