@@ -5,15 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Order extends Model
+class Role extends Model
 {
     use HasFactory;
     protected $guarded = [];
-    protected $table = 'orders';
+    protected $table = 'roles';
 
-    public function getTreatment()
-    {
-        return $this->hasOne(Treatment::class, 'id','treatmentId');
+    public function getUsers(){
+        return $this->belongsToMany(User::class, 'role_users');
     }
-
 }
