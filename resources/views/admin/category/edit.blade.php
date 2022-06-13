@@ -40,17 +40,17 @@
                                     </select>
 
                                     <label>Title :</label>
-                                    <input class="form-control" type="text" name="title" placeholder="{{$data->title}}">
+                                    <input class="form-control" type="text" name="title" placeholder="{{$data->title}}" value="{{$data->title}}">
 
                                     <label>Description :</label>
-                                    <textarea class="form-control" name="description" id="editor"></textarea>
+                                    <textarea class="form-control" name="description" id="editor" name="description">{!! $data->description !!}</textarea>
 
                                 </div>
                                 <div class="form-group col-md-6">
                                     <label>Image :</label>
                                     <input class="form-control" type="file" name="image">
                                     <label>Keywords [ Please seperate each keyword with comma ( , ) ]:</label>
-                                    <input class="form-control" type="text" name="keywords">
+                                    <input class="form-control" type="text" name="keywords" value="{{$data->title}}">
 
                                     <label>Status :</label> <br>
                                     <select class="form-control" name="status">

@@ -89,6 +89,8 @@ use Illuminate\Support\Facades\Route;
 
     Route::post('/createTreatmentByDoctor', [\App\Http\Controllers\UserController::class, 'createTreatmentByDoctor'])->name('user.createTreatmentByDoctor');
 
+    Route::get('/createTreatmentView/{user_id}', [\App\Http\Controllers\UserController::class, 'createTreatmentView'])->name('user.createTreatmentView');
+
     Route::get('/myPatients/{doctor_id}', [\App\Http\Controllers\UserController::class, 'myPatients'])->name('user.myPatients');
 
     Route::get('/patientAppointments/{doctor_id}/{patient_id}', [\App\Http\Controllers\UserController::class, 'patientAppointments'])->name('user.patientAppointments');

@@ -105,8 +105,35 @@ class UserController extends Controller
 
 
     public function createTreatmentByDoctor(Request $request){
+        //dd($request);
+        $data = new treatment();
 
+        $data->title=$request->title;
+        $data->keywords=$request->keywords;
+        $data->description = $request->input('description');
+        if($request->file('image')){
+            $data->image = $request->file('image')->store('images');
+        }
+        $data->categoryId=$request->categoryId;
+        //$data->detail=$request->detail;
+        $data->detail = $request->input('detail');
+        $data->price=$request->price;
+        $data->frequency=$request->frequency;
+        $data->duration=$request->duration;
+        $data->userId= $request->userId;
+        $data->status=$request->status;
 
+        $data->save();
+        return redirect('admin/treatment/create');
+    }
+
+    public function createTreatmentView($user_id){
+        $homePageProperties = FrontstorePropertyBuilderController::profilePagePropertyBuilder();
+        return view('home.createTreatment', [
+            'homePageProperties' => $homePageProperties,
+            'categoriesForNavbar' =>self::getMainCategories(),
+            'user_id' => $user_id
+        ]);
 
     }
     //bu sayfadan detaya gidince patientAppointments a gidecek. burda sayfaya yönlendirme olacak.

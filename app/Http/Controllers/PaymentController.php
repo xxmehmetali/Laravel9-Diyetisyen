@@ -19,6 +19,8 @@ class PaymentController extends Controller
         $request->request->add(['orderId' => $this->createOrder($request)]);
         $this->createAppointments($request);
 //        $this->deleteFromBasket($request);
+
+        return redirect()->back();
     }
 
     public function createOrder(Request $request){
@@ -56,6 +58,8 @@ class PaymentController extends Controller
 
             $appointment->save();
             $dateForAppointment=$dateForAppointment->addWeek($request->frequency);
+
+            return redirect()->back();
         }
 
 

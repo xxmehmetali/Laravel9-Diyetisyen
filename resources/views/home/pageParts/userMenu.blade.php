@@ -47,7 +47,7 @@
                 <div class="card" style="width: 18rem;display: inline-block">
                     <img src="{{ asset('assets') }}/img/create_treatment.png" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <button type="button" style="width: 100%" class="btn btn-info"><a href="{{ route('user.createTreatmentByDoctor', ['user_id' => $user_id]) }}" style="text-decoration: none; color:white">Paket Oluştur</a></button>
+                        <button type="button" style="width: 100%" class="btn btn-info"><a href="{{ route('user.createTreatmentView', ['user_id' => $user_id]) }}" style="text-decoration: none; color:white">Paket Oluştur</a></button>
                     </div>
                 </div>
                 <div class="card" style="width: 18rem;display: inline-block">

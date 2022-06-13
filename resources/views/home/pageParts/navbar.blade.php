@@ -36,11 +36,11 @@
                 <div class="ml-auto">
                     @auth
                         <a class="btn btn-custom" href="{{ route('user.userPanel') }}">Panel</a>
-                        <a class="btn btn-custom" href="logout">Çıkış Yap</a>
-                        <a class="btn btn-custom" href="basket/{{ Auth::user()->id }}">Sepet</a>
+                        <a class="btn btn-custom" href="{{ route('home.logout') }}">Çıkış Yap</a>
+                        <a class="btn btn-custom" href="{{ route('user.basket', ['user_id' => Auth::user()->id]) }}">Sepet</a>
                     @endauth
                     @guest
-                            <a class="btn btn-custom" href="login.html">Giriş Yap / Kayıt Ol</a>
+                            <a class="btn btn-custom" href="{{ route('home.login') }}">Giriş Yap / Kayıt Ol</a>
                         @endguest
                 </div>
             </div>

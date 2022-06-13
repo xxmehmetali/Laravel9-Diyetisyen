@@ -20,6 +20,8 @@ class ShopCartController extends Controller
         $shopCart->treatment_id=$request->treatment_id;
 
         $shopCart->save();
+        return redirect()->back();
+
 
     }
 

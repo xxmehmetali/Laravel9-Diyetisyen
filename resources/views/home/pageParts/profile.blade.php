@@ -25,8 +25,8 @@
                     <div class="row mt-3">
                         <input type="hidden" name="user_id" value="{{ Auth::user()->id }}">
                             <div class="col-md-12"><label class="labels">İsim ve Soyisim</label><input type="text" name="name" class="form-control" placeholder="{{ Auth::user()->name }}" value=""></div>
-                            <div class="col-md-12"><label class="labels">Telefon Numarası</label><input type="text" name="phoneNumber" class="form-control" placeholder="{{ Auth::user()->getProfile->phoneNumber }}" value=""></div>
-                            <div class="col-md-12"><label class="labels">Adres</label><input type="text" name="address" class="form-control" placeholder="{{ Auth::user()->getProfile->address }}" value=""></div>
+{{--                            <div class="col-md-12"><label class="labels">Telefon Numarası</label><input type="text" name="phoneNumber" class="form-control" placeholder="{{ Auth::user()->getProfile->phoneNumber }}" value=""></div>--}}
+{{--                            <div class="col-md-12"><label class="labels">Adres</label><input type="text" name="address" class="form-control" placeholder="{{ Auth::user()->getProfile->address }}" value=""></div>--}}
                             <div class="col-md-12"><label class="labels">Email</label><input type="text" name="email" class="form-control" placeholder="{{ Auth::user()->email }}" value=""></div>
                             <div class="mt-5 text-center"><input type="submit" class="btn btn-primary profile-button" style="margin-left: 20px" value="Kaydet"></div>
 

@@ -11,7 +11,7 @@
                     <div class="carousel-text">
                         <h3>{!! $rs->title !!}</h3>
                         <h1>{!! $rs->description !!}</h1>
-                        <a class="btn btn-custom" href="">Daha Fazlası</a>
+                        <a class="btn btn-custom" href="{{ route('home.treatmentDetailPage', ['id'=>$rs->id]) }}">Daha Fazlası</a>
                     </div>
                 </div>
             @endforeach
